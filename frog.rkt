@@ -25,5 +25,4 @@
   (void))
 
 ;; Parameters
-(current-source-dir "src")
-(current-output-dir "docs")
+(current-output-dir "./docs")
