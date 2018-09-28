@@ -23,6 +23,3 @@
 (define/contract (clean)
   (-> any)
   (void))
-
-;; Parameters
-(current-output-dir "./docs")
