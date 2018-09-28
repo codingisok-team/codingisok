@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>coding is ok: Posts tagged 'first'</title>
+  <description>coding is ok: Posts tagged 'first'</description>
+  <link>http://codingisok.com/tags/first.html</link>
+  <lastBuildDate>Fri, 28 Sep 2018 02:16:49 UT</lastBuildDate>
+  <pubDate>Fri, 28 Sep 2018 02:16:49 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>first post</title>
+   <link>http://codingisok.com/2018/09/first-post.html?utm_source=first&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-codingisok-com:-2018-09-first-post-html</guid>
+   <pubDate>Fri, 28 Sep 2018 02:16:49 UT</pubDate>
+   <author>lan-party</author>
+   <description>
+&lt;p&gt;this is the first post! there is nothing useful here.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/09/first-post.html?utm_source=first&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

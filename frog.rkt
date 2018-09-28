@@ -23,3 +23,7 @@
 (define/contract (clean)
   (-> any)
   (void))
+
+;; Parameters
+(current-source-dir "src")
+(current-output-dir "docs")
