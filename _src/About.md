@@ -1,4 +1,4 @@
-## Coding is _OK_
+## Coding is _O.K._
 
 This blog aims to provide intermediate-level programming resources. We assume
 that readers know what for-loops are, but we don't assume that programmers
