@@ -1,4 +1,2 @@
 # frog build cache
 .frog/
-# statically-generated site files
-docs/
