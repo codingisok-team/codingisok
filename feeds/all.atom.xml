@@ -4,7 +4,17 @@
  <link rel="self" href="http://codingisok.com/feeds/all.atom.xml" />
  <link href="http://codingisok.com/index.html" />
  <id>urn:http-codingisok-com:-index-html</id>
- <updated>2018-09-28T02:16:49Z</updated>
+ <updated>2018-09-28T21:50:55Z</updated>
+ <entry>
+  <title type="text">second post</title>
+  <link rel="alternate" href="http://codingisok.com/2018/09/second-post.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2018-09-second-post-html</id>
+  <published>2018-09-28T21:50:55Z</published>
+  <updated>2018-09-28T21:50:55Z</updated>
+  <author>
+   <name>lan-party</name></author>
+  <content type="html">
+&lt;p&gt;this is the second post. i&amp;rsquo;m trying to see if you need two posts for tags to work.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/09/second-post.html?utm_source=all&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
  <entry>
   <title type="text">first post</title>
   <link rel="alternate" href="http://codingisok.com/2018/09/first-post.html?utm_source=all&amp;utm_medium=Atom" />

@@ -4,9 +4,17 @@
   <title>coding is ok: Posts tagged 'trash'</title>
   <description>coding is ok: Posts tagged 'trash'</description>
   <link>http://codingisok.com/tags/trash.html</link>
-  <lastBuildDate>Fri, 28 Sep 2018 02:16:49 UT</lastBuildDate>
-  <pubDate>Fri, 28 Sep 2018 02:16:49 UT</pubDate>
+  <lastBuildDate>Fri, 28 Sep 2018 21:50:55 UT</lastBuildDate>
+  <pubDate>Fri, 28 Sep 2018 21:50:55 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>second post</title>
+   <link>http://codingisok.com/2018/09/second-post.html?utm_source=trash&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-codingisok-com:-2018-09-second-post-html</guid>
+   <pubDate>Fri, 28 Sep 2018 21:50:55 UT</pubDate>
+   <author>lan-party</author>
+   <description>
+&lt;p&gt;this is the second post. i&amp;rsquo;m trying to see if you need two posts for tags to work.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/09/second-post.html?utm_source=trash&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
   <item>
    <title>first post</title>
    <link>http://codingisok.com/2018/09/first-post.html?utm_source=trash&amp;utm_medium=RSS</link>
