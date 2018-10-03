@@ -1,4 +1,4 @@
-# FAQ
+# F.A.Q.
 
 ## Who are you anyway?
 Dan (they/them) is a professional software engineer who is frustrated with the industry and Linnea (she/her) is building programming self-confidence. You can find more of Dan's stuff [here](https://barel.la/blog) and more of Linnea's stuff [here](https://linneakirby.com) and [here](https://cirqueitelectrique.com).
@@ -43,5 +43,3 @@ P.S. Before you start thinking that singular they is "incorrect grammar," might 
 
 ## Why did you use "O.K." instead of "okay"?
 Good question. [Here's a good answer.](https://www.merriam-webster.com/words-at-play/the-hilarious-history-of-ok-okay)
-
----
