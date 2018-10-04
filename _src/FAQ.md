@@ -41,5 +41,13 @@ P.S. Before you start thinking that singular they is "incorrect grammar," might 
 
 ---
 
+## What does "lan-party" mean?
+
+It's both a play on our names (Linnea + Dan -> lan) and a reference to
+computer [LAN parties](http://wikipedia.org/wiki/LAN_party). We think it's
+cute.
+
+---
+
 ## Why did you use "O.K." instead of "okay"?
 Good question. [Here's a good answer.](https://www.merriam-webster.com/words-at-play/the-hilarious-history-of-ok-okay)
