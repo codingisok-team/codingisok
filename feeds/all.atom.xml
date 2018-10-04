@@ -4,24 +4,14 @@
  <link rel="self" href="http://codingisok.com/feeds/all.atom.xml" />
  <link href="http://codingisok.com/index.html" />
  <id>urn:http-codingisok-com:-index-html</id>
- <updated>2018-09-28T21:50:55Z</updated>
+ <updated>2018-10-04T14:04:40Z</updated>
  <entry>
-  <title type="text">second post</title>
-  <link rel="alternate" href="http://codingisok.com/2018/09/second-post.html?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:http-codingisok-com:-2018-09-second-post-html</id>
-  <published>2018-09-28T21:50:55Z</published>
-  <updated>2018-09-28T21:50:55Z</updated>
+  <title type="text">Choosing a Programming Language</title>
+  <link rel="alternate" href="http://codingisok.com/2018/10/choosing-a-programming-language.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2018-10-choosing-a-programming-language-html</id>
+  <published>2018-10-04T14:04:40Z</published>
+  <updated>2018-10-04T14:04:40Z</updated>
   <author>
    <name>lan-party</name></author>
   <content type="html">
-&lt;p&gt;this is the second post. i&amp;rsquo;m trying to see if you need two posts for tags to work.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/09/second-post.html?utm_source=all&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
- <entry>
-  <title type="text">first post</title>
-  <link rel="alternate" href="http://codingisok.com/2018/09/first-post.html?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:http-codingisok-com:-2018-09-first-post-html</id>
-  <published>2018-09-28T02:16:49Z</published>
-  <updated>2018-09-28T02:16:49Z</updated>
-  <author>
-   <name>lan-party</name></author>
-  <content type="html">
-&lt;p&gt;this is the first post! there is nothing useful here.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/09/first-post.html?utm_source=all&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
+&lt;p&gt;The perennial question: which language should you choose for a project? We&amp;rsquo;re going to talk about general considerations and also how those considerations relate to the  &lt;a href="http://codingisok.com/FAQ.html#why-did-you-choose-these-particular-programming-languages"&gt;4 languages&lt;/a&gt; (&lt;code&gt;c&lt;/code&gt;, &lt;code&gt;c++&lt;/code&gt;, &lt;code&gt;java&lt;/code&gt;, &lt;code&gt;python&lt;/code&gt;) we chose for this site.&lt;/p&gt;&lt;a href="http://codingisok.com/2018/10/choosing-a-programming-language.html?utm_source=all&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
