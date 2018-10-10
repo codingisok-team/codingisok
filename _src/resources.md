@@ -14,6 +14,8 @@ specifiers can be hard to remember. Luckily, there's a
 for it. If you want a more verbose explanation of `printf`, you might like [this 
 paper](http://www.cypress.com/file/54441/download).
 
+---
+
 ## `vim`
 ### `vimtutor`
    a program probably already located on your computer, `vimtutor` guides the user 
@@ -44,12 +46,16 @@ easy-to-parse place.
     Need even more `vim`? The [`vim` wiki's](http://vim.wikia.com/wiki/Category:Usage) 
 got you covered. 
 
+---
+
 ## Markdown
 ### Markdown Guide
    [Markdown Guide](https://www.markdownguide.org/getting-started) is a comprehensive 
 guide to the Markdown markup language. Not only does it introduce Markdown, it 
 also provides explanations for both basic and extended syntax, as well as a 
 cheat sheet. 
+
+---
 
 ## Regex
 ### RegExr
@@ -70,9 +76,11 @@ how a regex interpreter parses and pattern matches your regex step by step.
 a good, clear introduction to what regexes are, how to write them, and what they 
 can be used for.
 
+---
+
 ## `ruby`
 ### why's [poignant] guide to `ruby`
-  If you want an introduction to ruby (or programming in general) but wish that 
+  If you want an introduction to `ruby` (or programming in general) but wish that 
 programming resources were written by Douglas Adams, then [the poignant guide](https://poignant.guide/) 
 is for you. If why's rambling's end up being too much for you, why has also 
 compiled a [list of more traditional `ruby` resources](https://poignant.guide/book/).
