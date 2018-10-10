@@ -82,5 +82,5 @@ can be used for.
 ### why's [poignant] guide to `ruby`
   If you want an introduction to `ruby` (or programming in general) but wish that 
 programming resources were written by Douglas Adams, then [the poignant guide](https://poignant.guide/) 
-is for you. If why's rambling's end up being too much for you, why has also 
+is for you. If why's ramblings end up being too much for you, why has also 
 compiled a [list of more traditional `ruby` resources](https://poignant.guide/book/).
