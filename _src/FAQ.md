@@ -17,7 +17,7 @@ Hopefully! We've gotten pretty annoyed with most examples that we've seen in ins
 
 ## Why did you choose these particular programming languages?
 
-In our opinion, programming in `c`, `python`, and `java` covers a wide range of
+In our opinion, programming in `c`, `c++`, `python`, and `java` covers a wide range of
 language paradigms which programmers regularly deal with.
 
 `c` is a foundational language, while `java`, `python`, and `c++` are some of
