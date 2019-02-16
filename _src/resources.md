@@ -84,3 +84,15 @@ can be used for.
 programming resources were written by Douglas Adams, then [the poignant guide](https://poignant.guide/) 
 is for you. If why's ramblings end up being too much for you, why has also 
 compiled a [list of more traditional `ruby` resources](https://poignant.guide/book/).
+
+---
+
+## Sorting
+### Sorting Algorithms Animations
+  If you're stuck on how the most common sorting algorithms work and would like a side-by-side visual demonstration, [this website](https://www.toptal.com/developers/sorting-algorithms) is for you!
+
+### sorting.at
+  If you thought the first website was cool, but would like a more visually interesting and customizable experience of sorting algorithms (with some less common ones thrown in), [sorting.at](http://sorting.at/) has got you covered.
+
+### Sorting Algorithms Dance
+  For some extra fun, why not check out common sorting algorithms (as well as a few search algorithms) [as dances](https://www.youtube.com/user/AlgoRythmics/videos)?

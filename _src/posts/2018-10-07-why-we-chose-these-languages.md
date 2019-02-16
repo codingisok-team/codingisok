@@ -3,7 +3,7 @@
     Tags: DRAFT
 
 We want this site to be a useful resource, therefore we've chosen four common
-programming languages to focus on: `c`, c++`, `java`, and `python`.
+programming languages to focus on: `c`, `c++`, `java`, and `python`.
 
 These languages range in complexity and the amount of control the programmer
 has over the inner workings of the computer -- `c` assumes the programmer knows
@@ -32,12 +32,12 @@ systems programming (e.g. writing an operating system or a graphics program).
 ### Libraries
 ### Community
 
-### Conclusion 
+### Conclusion
 
 `c` (and its shortcomings) have prompted people to write new languages in order
 to add safety nets and improve code readability. One direct example is `c++`.
 
-## `c++` 
+## `c++`
 
 `c++` was originally known as "`c` with classes."
 
@@ -46,7 +46,7 @@ to add safety nets and improve code readability. One direct example is `c++`.
 ### Libraries
 ### Community
 
-### Conclusion 
+### Conclusion
 
 ## `java`
 
@@ -55,7 +55,7 @@ to add safety nets and improve code readability. One direct example is `c++`.
 ### Libraries
 ### Community
 
-### Conclusion 
+### Conclusion
 
 ## `python`
 
@@ -64,6 +64,6 @@ to add safety nets and improve code readability. One direct example is `c++`.
 ### Libraries
 ### Community
 
-### Conclusion 
+### Conclusion
 
 ## Final Thoughts
