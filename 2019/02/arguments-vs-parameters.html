@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Arguments vs. Parameters</title>
+    <meta name="description" content="The words &quot;argument&quot; and &quot;parameter&quot; are thrown around a lot in similar contexts, but what's the difference?  Spoiler alert: parameters are used in reference to arguments....">
+    <meta name="author"      content="lan-party">
+    <meta name="keywords"    content="terminology, functions, methods, arguments, parameters">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://codingisok.com/2019/02/arguments-vs-parameters.html">
+    <link rel="next" href="/2019/02/functions-vs-methods.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+
+      <a href="/index.html" class="navbar-brand">Coding is O.K.</a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar_collapse" aria-controls="navbar_collapse"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/arguments.html">arguments</a><a class="dropdown-item" href="/tags/functions.html">functions</a><a class="dropdown-item" href="/tags/methods.html">methods</a><a class="dropdown-item" href="/tags/parameters.html">parameters</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/FAQ.html">F.A.Q.</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/resources.html">Resources</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+      </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Arguments vs. Parameters</h1>
+    <p class='date-and-tags'>
+<time datetime="2019-02-19" pubdate="true">2019-02-19</time> :: <span class="tags"><a href="/tags/terminology.html">terminology</a>, <a href="/tags/functions.html">functions</a>, <a href="/tags/methods.html">methods</a>, <a href="/tags/arguments.html">arguments</a>, <a href="/tags/parameters.html">parameters</a></span></p>
+    <p class='authors'>By: <span class="authors">lan-party</span></p>
+  </header>
+
+<p>The words &ldquo;argument&rdquo; and &ldquo;parameter&rdquo; are thrown around a lot in similar contexts, but what&rsquo;s the difference?</p>
+
+<p>Spoiler alert: parameters are used in reference to arguments.</p>
+<!-- more-->
+
+<h2 id="whats-an-argument">What&rsquo;s an argument?</h2>
+
+<p>An argument is any of the information (e.g. objects, values, pointers, etc.) passed to a function or method.<sup><a href="#2019-02-19-arguments-vs-parameters-footnote-1-definition" name="2019-02-19-arguments-vs-parameters-footnote-1-return">1</a></sup></p>
+
+<h2 id="so-whats-a-parameter-then">So what&rsquo;s a parameter then?</h2>
+
+<p>A parameter is the in-function/in-method reference to the arguments. You can think of parameters as placeholder names for currently unknown values.</p>
+
+<h2 id="case-study-adding-integers">Case Study: Adding integers</h2>
+
+<p>Let&rsquo;s pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:</p>
+
+<pre><code>import java.util.List;
+
+public class IntAdder {
+
+	public static int add(int a, int b){
+		return a+b;
+	}
+
+	public static int add(List&lt;Integer&gt; nums){
+		int sum = 0;
+
+		for (int i : nums){
+			sum += i;
+		}
+
+		return sum;
+	}
+
+}</code></pre>
+
+<p>Note that you, a clever person, have used method overloading here to allow yourself to add together either two ints or a <code>List</code> of <code>Integers</code> (a.k.a. any number of integers).</p>
+
+<h3 id="the-parameters">The Parameters</h3>
+
+<p>Since we don&rsquo;t have any method calls yet, let&rsquo;s start with the parameters for the two methods.</p>
+
+<p>The first method takes in two <code>int</code>s, adds them together, and returns the result. Here, <code>a</code> and <code>b</code> are our parameters, as they are the in-method names we have given our <code>int</code>s.</p>
+
+<p>The second method takes in a <code>List</code> (e.g. an <code>ArrayList</code>, a <code>LinkedList</code>, etc.) of <code>int</code>s, adds all the values together, and returns the result. For this method, we only have one parameter, our <code>List</code> <code>nums,</code> which we reference when getting the size of the <code>List</code> and each individual <code>int</code> within the <code>List</code>.</p>
+
+<h3 id="the-arguments">The Arguments</h3>
+
+<p>O.K., time to actually use these methods! Quick — what&rsquo;s 12,345 + 67,890? ¯\_(ツ)_/¯ Good thing you just wrote a method to figure it out! You make a call to <code>add()</code>, using the arguments <code>12345</code> and <code>67890</code>:</p>
+
+<pre><code>add(12345, 67890);</code></pre>
+
+<p>Since you used two <code>int</code>s as arguments, your <code>IntAdder</code> class knows to use your first method (the one with <code>int</code> parameters <code>a</code> and <code>b</code>), which returns the answer 80,235.</p>
+
+<h4 id="more-practically-though">More practically though</h4>
+
+<p>Let&rsquo;s pretend you&rsquo;re a teacher who wants to find a student&rsquo;s grade average. You already have an <code>ArrayList</code> of the student&rsquo;s grades called <code>studentGrades</code> (don&rsquo;t ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your <code>add()</code> method, you can make a call to it to find the sum of the student&rsquo;s grades:</p>
+
+<pre><code>add(studentGrades);</code></pre>
+
+<p>Since you used one <code>ArrayList</code> as your argument, your <code>IntAdder</code> class knows to use your second method (the one with <code>List</code> parameter <code>nums</code>), which returns the sum of all the grades. Now all you need to do is divide that sum by the total number of grades that was in the <code>ArrayList</code> and you&rsquo;ll have your average!</p>
+
+<hr />
+
+<div class="footnotes">
+ <ol>
+  <li id="2019-02-19-arguments-vs-parameters-footnote-1-definition" class="footnote-definition">
+   <p>We wrote a post about the difference between functions and methods <a href="https://codingisok.com/2019/02/functions-vs-methods.html">here</a>!&nbsp;<a href="#2019-02-19-arguments-vs-parameters-footnote-1-return">↩</a></p></li></ol></div>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://codingisok.com/2019/02/arguments-vs-parameters.html"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://codingisok.com/2019/02/arguments-vs-parameters.html"></g:plusone>
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2019/02/functions-vs-methods.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Functions vs. Methods</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated
+        by <a href="https://github.com/greghendershott/frog">Frog</a>,
+        the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

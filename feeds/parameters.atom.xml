@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">coding is ok: Posts tagged 'parameters'</title>
+ <link rel="self" href="http://codingisok.com/feeds/parameters.atom.xml" />
+ <link href="http://codingisok.com/tags/parameters.html" />
+ <id>urn:http-codingisok-com:-tags-parameters-html</id>
+ <updated>2019-02-19T18:30:24Z</updated>
+ <entry>
+  <title type="text">Arguments vs. Parameters</title>
+  <link rel="alternate" href="http://codingisok.com/2019/02/arguments-vs-parameters.html?utm_source=parameters&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2019-02-arguments-vs-parameters-html</id>
+  <published>2019-02-19T18:30:24Z</published>
+  <updated>2019-02-19T18:30:24Z</updated>
+  <author>
+   <name>lan-party</name></author>
+  <content type="html">
+&lt;p&gt;The words &amp;ldquo;argument&amp;rdquo; and &amp;ldquo;parameter&amp;rdquo; are thrown around a lot in similar contexts, but what&amp;rsquo;s the difference?&lt;/p&gt;
+
+&lt;p&gt;Spoiler alert: parameters are used in reference to arguments.&lt;/p&gt;&lt;a href="http://codingisok.com/2019/02/arguments-vs-parameters.html?utm_source=parameters&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>

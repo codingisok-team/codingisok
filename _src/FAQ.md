@@ -1,7 +1,7 @@
 # F.A.Q.
 
 ## Who are you anyway?
-Dan (they/them) is a professional software engineer who is frustrated with the industry and Linnea (she/her) is building programming self-confidence. You can find more of Dan's stuff [here](https://barel.la/blog) and more of Linnea's stuff [here](https://linneakirby.com) and [here](https://cirqueitelectrique.com).
+Dan (they/them) is a professional software engineer who is frustrated with the industry and Linnea (she/her) is building programming self-confidence. You can find more of Dan's stuff [here](https://barel.la/blog) and more of Linnea's stuff [here](https://linneakirby.com) and [here](cirqueit.info).
 
 ---
 
