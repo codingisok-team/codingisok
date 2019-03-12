@@ -14,7 +14,7 @@ An argument is any of the information (e.g. objects, values, pointers, etc.) pas
 [^1]: We wrote a post about the difference between functions and methods [here](https://codingisok.com/2019/02/functions-vs-methods.html)!
 
 ## So what's a parameter then?
-A parameter is the in-function/in-method reference to the arguments. You can think of parameters as placeholder names for currently unknown values.
+A parameter is the reference to the arguments within a function or method. You can think of parameters as placeholder names for currently unknown values.
 
 ## Case Study: Adding integers
 
@@ -61,9 +61,7 @@ add(12345, 67890);
 
 Since you used two `int`s as arguments, your `IntAdder` class knows to use your first method (the one with `int` parameters `a` and `b`), which returns the answer 80,235.
 
-#### More practically though
-
-Let's pretend you're a teacher who wants to find a student's grade average. You already have an `ArrayList` of the student's grades called `studentGrades` (don't ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your `add()` method, you can make a call to it to find the sum of the student's grades:
+More practically though, let's pretend you're a teacher who wants to find a student's grade average. You already have an `ArrayList` of the student's grades called `studentGrades` (don't ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your `add()` method, you can make a call to it to find the sum of the student's grades:
 
 ```
 add(studentGrades);
