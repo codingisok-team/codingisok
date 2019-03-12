@@ -1,6 +1,6 @@
     Title: the static keyword
     Date: 2019-03-05T13:21:49
-    Tags: DRAFT, terminology, keywords, java
+    Tags: terminology, keywords, java
 
 If you program in Java, then you are most likely familiar with `public static void main(String[] args)` (and if you're not, then are you sure you're programming in Java?), but what exactly does the `static` part mean?
 
