@@ -4,7 +4,17 @@
  <link rel="self" href="http://codingisok.com/feeds/all.atom.xml" />
  <link href="http://codingisok.com/index.html" />
  <id>urn:http-codingisok-com:-index-html</id>
- <updated>2019-02-19T18:30:24Z</updated>
+ <updated>2019-03-05T18:21:49Z</updated>
+ <entry>
+  <title type="text">The Static Keyword in Java</title>
+  <link rel="alternate" href="http://codingisok.com/2019/03/the-static-keyword-in-java.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2019-03-the-static-keyword-in-java-html</id>
+  <published>2019-03-05T18:21:49Z</published>
+  <updated>2019-03-05T18:21:49Z</updated>
+  <author>
+   <name>lan-party</name></author>
+  <content type="html">
+&lt;p&gt;If you program in Java, then you are most likely familiar with &lt;code&gt;public static void main(String[] args)&lt;/code&gt; (and if you&amp;rsquo;re not, then are you sure you&amp;rsquo;re programming in Java?), but what exactly does the &lt;code&gt;static&lt;/code&gt; part mean?&lt;/p&gt;&lt;a href="http://codingisok.com/2019/03/the-static-keyword-in-java.html?utm_source=all&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
  <entry>
   <title type="text">Arguments vs. Parameters</title>
   <link rel="alternate" href="http://codingisok.com/2019/02/arguments-vs-parameters.html?utm_source=all&amp;utm_medium=Atom" />

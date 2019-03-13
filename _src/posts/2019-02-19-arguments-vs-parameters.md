@@ -18,7 +18,9 @@ A parameter is the reference to the arguments within a function or method. You c
 
 ## Case Study: Adding integers
 
-Let's pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:
+Let's pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:[^2]
+
+[^2]: If you need an explanation for why you decided to use static methods, we wrote a post all about the `static` keyword [here](https://codingisok.com/2019/03/the-static-keyword-in-java.html)!
 
 ```
 import java.util.List;

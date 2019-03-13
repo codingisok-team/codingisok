@@ -1,4 +1,4 @@
-    Title: the static keyword
+    Title: The Static Keyword in Java
     Date: 2019-03-05T13:21:49
     Tags: terminology, keywords, java
 

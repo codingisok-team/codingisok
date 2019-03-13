@@ -4,9 +4,17 @@
   <title>coding is ok: Posts tagged 'terminology'</title>
   <description>coding is ok: Posts tagged 'terminology'</description>
   <link>http://codingisok.com/tags/terminology.html</link>
-  <lastBuildDate>Tue, 19 Feb 2019 18:30:24 UT</lastBuildDate>
-  <pubDate>Tue, 19 Feb 2019 18:30:24 UT</pubDate>
+  <lastBuildDate>Tue, 05 Mar 2019 18:21:49 UT</lastBuildDate>
+  <pubDate>Tue, 05 Mar 2019 18:21:49 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>The Static Keyword in Java</title>
+   <link>http://codingisok.com/2019/03/the-static-keyword-in-java.html?utm_source=terminology&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-codingisok-com:-2019-03-the-static-keyword-in-java-html</guid>
+   <pubDate>Tue, 05 Mar 2019 18:21:49 UT</pubDate>
+   <author>lan-party</author>
+   <description>
+&lt;p&gt;If you program in Java, then you are most likely familiar with &lt;code&gt;public static void main(String[] args)&lt;/code&gt; (and if you&amp;rsquo;re not, then are you sure you&amp;rsquo;re programming in Java?), but what exactly does the &lt;code&gt;static&lt;/code&gt; part mean?&lt;/p&gt;&lt;a href="http://codingisok.com/2019/03/the-static-keyword-in-java.html?utm_source=terminology&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
   <item>
    <title>Arguments vs. Parameters</title>
    <link>http://codingisok.com/2019/02/arguments-vs-parameters.html?utm_source=terminology&amp;utm_medium=RSS</link>

@@ -11,7 +11,7 @@
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://codingisok.com/2019/02/arguments-vs-parameters.html">
     <link rel="next" href="/2019/02/functions-vs-methods.html">
-
+    <link rel="prev" href="/2019/03/the-static-keyword-in-java.html">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -57,7 +57,7 @@
               </a>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="/tags/arguments.html">arguments</a><a class="dropdown-item" href="/tags/functions.html">functions</a><a class="dropdown-item" href="/tags/methods.html">methods</a><a class="dropdown-item" href="/tags/parameters.html">parameters</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
+                <a class="dropdown-item" href="/tags/arguments.html">arguments</a><a class="dropdown-item" href="/tags/functions.html">functions</a><a class="dropdown-item" href="/tags/java.html">java</a><a class="dropdown-item" href="/tags/keywords.html">keywords</a><a class="dropdown-item" href="/tags/methods.html">methods</a><a class="dropdown-item" href="/tags/parameters.html">parameters</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
               </div>
             </li>
 
@@ -114,11 +114,11 @@
 
 <h2 id="so-whats-a-parameter-then">So what&rsquo;s a parameter then?</h2>
 
-<p>A parameter is the in-function/in-method reference to the arguments. You can think of parameters as placeholder names for currently unknown values.</p>
+<p>A parameter is the reference to the arguments within a function or method. You can think of parameters as placeholder names for currently unknown values.</p>
 
 <h2 id="case-study-adding-integers">Case Study: Adding integers</h2>
 
-<p>Let&rsquo;s pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:</p>
+<p>Let&rsquo;s pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:<sup><a href="#2019-02-19-arguments-vs-parameters-footnote-2-definition" name="2019-02-19-arguments-vs-parameters-footnote-2-return">2</a></sup></p>
 
 <pre><code>import java.util.List;
 
@@ -158,9 +158,7 @@ public class IntAdder {
 
 <p>Since you used two <code>int</code>s as arguments, your <code>IntAdder</code> class knows to use your first method (the one with <code>int</code> parameters <code>a</code> and <code>b</code>), which returns the answer 80,235.</p>
 
-<h4 id="more-practically-though">More practically though</h4>
-
-<p>Let&rsquo;s pretend you&rsquo;re a teacher who wants to find a student&rsquo;s grade average. You already have an <code>ArrayList</code> of the student&rsquo;s grades called <code>studentGrades</code> (don&rsquo;t ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your <code>add()</code> method, you can make a call to it to find the sum of the student&rsquo;s grades:</p>
+<p>More practically though, let&rsquo;s pretend you&rsquo;re a teacher who wants to find a student&rsquo;s grade average. You already have an <code>ArrayList</code> of the student&rsquo;s grades called <code>studentGrades</code> (don&rsquo;t ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your <code>add()</code> method, you can make a call to it to find the sum of the student&rsquo;s grades:</p>
 
 <pre><code>add(studentGrades);</code></pre>
 
@@ -171,7 +169,9 @@ public class IntAdder {
 <div class="footnotes">
  <ol>
   <li id="2019-02-19-arguments-vs-parameters-footnote-1-definition" class="footnote-definition">
-   <p>We wrote a post about the difference between functions and methods <a href="https://codingisok.com/2019/02/functions-vs-methods.html">here</a>!&nbsp;<a href="#2019-02-19-arguments-vs-parameters-footnote-1-return">↩</a></p></li></ol></div>
+   <p>We wrote a post about the difference between functions and methods <a href="https://codingisok.com/2019/02/functions-vs-methods.html">here</a>!&nbsp;<a href="#2019-02-19-arguments-vs-parameters-footnote-1-return">↩</a></p></li>
+  <li id="2019-02-19-arguments-vs-parameters-footnote-2-definition" class="footnote-definition">
+   <p>If you need an explanation for why you decided to use static methods, we wrote a post all about the <code>static</code> keyword <a href="https://codingisok.com/2019/03/the-static-keyword-in-java.html">here</a>!&nbsp;<a href="#2019-02-19-arguments-vs-parameters-footnote-2-return">↩</a></p></li></ol></div>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -200,7 +200,12 @@ public class IntAdder {
               <span aria-hidden="true">&larr; Functions vs. Methods</span>
             </a>
           </li>
-
+          <li class="page-item">
+            <a class="page-link" href="/2019/03/the-static-keyword-in-java.html"
+               aria-label="Next">
+              <span aria-hidden="true">The Static Keyword in Java &rarr;</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
