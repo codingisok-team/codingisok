@@ -96,7 +96,7 @@ def main():
 Example usage:
 
 ```
-$ python3 hot_dogge.py
+$ python3 hot_dogge1.py
 Food? Fries
 Cost? 1.00
 
