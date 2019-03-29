@@ -5,6 +5,8 @@
 To test or not to test, that is the question (jkjk don't be a dumbus; TEST YOUR
 CODE). The real question is, when and how to test?
 
+Spoiler alert: we're not the biggest fans of test-driven development.
+
 <!-- more -->
 
 # A few common approaches to testing
@@ -15,42 +17,30 @@ CODE). The real question is, when and how to test?
 2. Inserting "helpful" print statements, or: write some code and, when it
    fails, print out some hopefully useful values and place markers to track
    down the bugs. This method is inelegant, but can get the job done if you
-   know what you're doing. We don't not recommend this method, but if something
-   breaks, you'll have some re-testing to do. Also it makes your code messy.
+   know what you're doing. We *don't not* recommend this method, but if something
+   breaks, you'll have some re-testing to do. Also it makes your code messy. Also also it makes it hard for anyone else to dive in and feel confident they're not breaking something since you don't have a test suite.
 
-3. Test-driven development (TDD), or: write an excessive number of
-   debatably-useful tests before writing any code. Then write some code and fix
-   any bugs using the testing output. Rinse and repeat. A trendy approach at
+3. Test-driven development (TDD), or: write an excessive number of debatably-useful tests before writing any code. Then write some code and fix
+   any bugs using the testing output. Rinse and repeat. TDD is trendy approach at
    the moment, but honestly not our favorite; we think TDD is pedantic and
-   cumbersome and cements your program's design before you even know what the
-   best design is.
+   cumbersome and cements your program's design before you've even decided what the best design is.
 
 # Our approach to testing
 
-A good program begins with something like an essay outline (a program outline,
-if you will). A program outline allows the coder to determine the general
-structure and flow of the program including core classes, methods, functions,
-and variables. No real code is necessary here, stubs are fine to get the point
-across. Once you have a general outline, then you can start writing tests,
-feeling confident that you (probably) won't have to frantically change a bunch
-of names and refactor like, 10 times.
-
-TODO: talk about pseudocode
+We believe a good program begins with a program outline (just like how you're supposed to create an outline before writing that essay about [*The Tenant of Wildfell Hall* and how Anne Brontë was ahead of her time and is still completely underrated](http://www.harkavagrant.com/index.php?id=202), or at least that's what our high school English teachers told us to do). A program outline allows the coder to determine the general structure and flow of the program including core classes, methods, functions, and variables. No real code is necessary here, pseudocode and stubs are fine to get the point across. Once you have a general outline, then you can start writing tests, feeling confident that you (probably) won't have to frantically change a bunch of names and refactor like, 10 times.
 
 ## Case Study: Hot Dog Order Tracker
 
-You are a newly-minted proud 10-year-old owner of a hot dog stand who needs a
+You are a 10-year-old, newly-minted, proud owner of a hot dog stand who needs a
 way to keep track of orders. Fortunately, you're also a [*seasoned*
 programmer](https://crouton.net) (geddit??). You decide to code an order
 tracker that will allow you to input orders and display an itemized receipt
 when an order is completed, including a unique order number. Since you're a
-child, you don't need to worry about taxes. Or working. Why are you running
-a business?
+child, you don't need to worry about taxes. Or working, actually — why are you running a business anyway?
 
 ### Option 1: Basic Programming (not to be confused with [BASIC](https://en.wikipedia.org/wiki/BASIC) programming)
 
-You're pretty lazy, so you figure you'll just start with something simple: have
-the program take in the name of the food and the cost. Done!
+You want to feel like you know what you're doing, so you figure you'll start with something simple: have the program take in the name of each item and its cost. Done!
 
 ```
 def get_food_from_console():  # Returns a str
@@ -96,7 +86,7 @@ def main():
 Example usage:
 
 ```
-$ python3 hot_dogge1.py
+$ python3 hot_dogge.py
 Food? Fries
 Cost? 1.00
 
@@ -128,23 +118,14 @@ Food? <Ctrl-C>
 $
 ```
 
-It looks like we wrote most of the program, but this pseudocode just happens to
-be mostly executable.
+O.K., it may look like you just wrote most of this program, but because the design is so simple, this pseudocode happens to be mostly executable. If this was your finalized design, here would be the point where we would advocate to start writing tests.
 
-Note that, to "remove" an item from the order, you would need to add an item
-with a negative cost -- kinda clunky, but functional.
+A few issues to consider before committing to this design though: to "remove" an item from the order, you need to add an item with a negative cost — kinda clunky, but functional. There also isn't a hierarchy to the order; that is, it's not obvious if ketchup is supposed to be a side or go on the hot dog. You could always specify in the name of the item, but maybe that's too much of a bother.
 
-TODO: decide if we care about this
-
-Another issue: Ketchup is normally an add-on, but, but here it's being treated
-the same as a side.
 
 ### Option 2: Fancier Programming
 
-You realize that there are some flaws with your current approach -- for
-example, the menu is nowhere to be found, which means that there's a lot of
-typing involved, and it's easy to make a mistake when entering orders. You go
-back to the drawing board.
+You realize that there are some flaws with your current approach — the menu isn't saved anywhere, there's a lot of typing involved, and it's easy to make a mistake when entering orders. You decide to go back to the drawing board.
 
 ```
 class Food(object):
@@ -186,7 +167,7 @@ def make_receipt(order_number, order):  # Returns a str
 
     Total:   $3.50
 
-  Note: Contrasting with the make_receipt function in Option 1, this funcion
+  Note: Contrasting with the make_receipt function in Option 1, this function
   deals with Food objects instead of (str, float) tuples.
   """
   pass
@@ -237,25 +218,18 @@ Item? <Ctrl-C>
 $
 ```
 
-This approach makes it much easier to create orders and fix mistakes. It's also
-impossible to mis-type a food name or cost, and mistakes don't show up in the
-final receipt.
+On the bright side, this approach makes it much easier to create orders and fix mistakes. It's also impossible to mis-type a food name or cost, and mistakes don't show up in the final receipt.
 
-That said, you can't make custom orders. This program also has the grouping
-issue that Option 1 had -- Ketchup is still being treated as a food instead of
-being grouped with an item (the Hot Dog). Additionally, the menu is hard-coded
-within the program -- you can't change it without changing the program. This is
-bad when it's your younger sibling's shift and they try to make everything cost
-$1000.00 but screw up the code instead.
+That said, there are still a few problems: the grouping issue that Option 1 had is still around (is the ketchup a side or on the hot dog???) and since the menu is hard-coded within the program, you can't make custom orders — that is, you can't change the without changing the program itself. This is especially bad when it's your younger sibling's shift and they in their infinite wisdom attempt to make everything cost $1000.00 but screw up the code instead.
 
-### Option 3
+### Option 3: Fanciest Programming
 
 ```
 class Menu(object):
   """A menu object.
 
   The user is able to add/amend menu entries.
-    Adding lets you create custom items -- they are lost when the program stops.
+    Adding lets you create custom items — they are lost when the program stops.
     Amending lets you change the name and/or cost of a food on the menu.
   """
 
@@ -459,5 +433,10 @@ Command? <Ctrl-C>
 $
 ```
 
-Now your sibling can't permanently mess up the menu; you can add special orders,
-and you can keep track of which items go together -- heck yeah!
+Whoof, this one's a long one. Buuuuuuut now your sibling can't permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all!
+
+## The Aftermath
+
+Once you've squared away your design, that's when you can break out the fancy TDD toolbox and start writing incremental tests. 
+
+
