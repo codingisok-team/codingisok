@@ -15,6 +15,11 @@ Hopefully! We've gotten pretty annoyed with most examples that we've seen in ins
 
 ---
 
+## What do `<these_things>` mean in the examples?
+We try to have as few placeholder values in our examples as possible for clarity's sake, but any time we need to add a placeholder (such as for unknown user input), we will put it in pointy brackets, like this: `<placeholder>`.
+
+---
+
 ## Why did you choose these particular programming languages?
 
 In our opinion, programming in `c`, `c++`, `python`, and `java` covers a wide range of

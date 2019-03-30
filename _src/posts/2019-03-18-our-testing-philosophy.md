@@ -42,7 +42,7 @@ child, you don't need to worry about taxes. Or working, actually — why are you
 
 You want to feel like you know what you're doing, so you figure you'll start with something simple: have the program take in the name of each item and its cost. Done!
 
-```
+```python
 def get_food_from_console():  # Returns a str
   """
   Returns (str, False) if the user entered a food, (None, True) otherwise.
@@ -120,7 +120,7 @@ $
 
 O.K., it may look like you just wrote most of this program, but because the design is so simple, this pseudocode happens to be mostly executable. If this was your finalized design, here would be the point where we would advocate to start writing tests.
 
-A few issues to consider before committing to this design though: to "remove" an item from the order, you need to add an item with a negative cost — kinda clunky, but functional. There also isn't a hierarchy to the order; that is, it's not obvious if ketchup is supposed to be a side or go on the hot dog. You could always specify in the name of the item, but maybe that's too much of a bother.
+A few issues to consider before committing to this design though: to "remove" an item from the order, you need to add an item with a negative cost — kinda clunky, but functional. There also isn't any grouping in the order; that is, it's not obvious if ketchup is supposed to be a side or go on the hot dog. You could always specify in the name of the item, but maybe that's too much of a bother.
 
 
 ### Option 2: Fancier Programming
@@ -136,7 +136,7 @@ class Food(object):
     self.cost = cost
 
 
-ID_TO_FOOD = {
+MENU = {
   'A': Food('Fries', 1.00),
   'B': Food('Hot Dog', 2.00),
   'C': Food('Ketchup', 0.50),
@@ -183,7 +183,7 @@ def main():
     while not done:
       should_add, identifier, done = get_food_from_console()
       if identifier is not None:
-        food = ID_TO_FOOD[identifier]
+        food = MENU[identifier]
 
         if should_add:
           order.append(food)
@@ -433,10 +433,50 @@ Command? <Ctrl-C>
 $
 ```
 
-Whoof, this one's a long one. Buuuuuuut now your sibling can't permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all!
+Whoof, this one's a long one. Buuuuuuut now your sibling can't permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all! 
+
+In fact, this program isn't even that complicated once you break it down: in order to keep track of toppings vs. sides, you had to add a few classes to create a hierarchy, so you have a handful of functions (all those `handle_<object>_command` functions) that are the same basic function modified for each new class. Note that the menu is read in from an external file when the program is launched, keeping it safe from any meddling younger siblings.
+
+#### A New Hierarchy
+
+Now, instead of just having orders comprised of items, you have a `Menu` object which contains `Food` objects, and `Order` objects which contain `Item` objects which are actually just one or more `Food` objects. This way, your program knows how to group foods within an order when it prints out the receipt; that is, it will print out each `Item` object as its own block of foods.
+
+More generally, the hierarchy works like this:
+
+	- Menu
+	  - Food
+	  - Food
+	  - Food
+	  - Food
+	  - Food
+
+	- Order
+	  - Item
+	    - Food
+	    - Food
+	    - Food
+	  - Item
+	    - Food
+
+#### Decisions, decisions, decisions!
+
+- **`menu`** → commands related to modifying the menu
+	- **`add <food_id> "<name>" <cost>`** → add a new food option to the menu (note that if the program is restarted, this new item will not persist, so this option is a good way to add a temporary item like a special of the day)
+	- **`edit <food_id> "<name>" <cost>`** → modify an existing food option on the menu (note that the `<food_id>` stays the same, but the `name` and `cost` of the item may be modified. this is the only way to effectively delete an item from the menu without modifying the menu file and restarting the program)
+
+- **`<food_id> ...`** → add an item consisting of one or more food to the current order
+
+- **`item`** → commands related to modifying an item in the current order
+	- **`<item_id> add <food_id>`** → add food `<food_id>` to item `<item_id>`
+	- **`<item_id> remove <food_id>`** → remove food `<food_id>` from item `<item_id>`
+
+- **`order`** → commands related to modifying the current order
+	- **`add "<name>" <cost>`** → add a special item to the current order (note that this option can be used to add either custom items with a positive cost, or discounts with a negative cost)
+	- **`remove <item_id>`** → remove item `<item_id>` from the order (note that the item id will not be re-used if another item is added to the current order)
+	- **`end`** → end the current order and print the receipt
 
 ## The Aftermath
 
-Once you've squared away your design, that's when you can break out the fancy TDD toolbox and start writing incremental tests. 
+Now that you've squared away your design, you can finally break out the fancy TDD toolbox and start writing incremental tests, confident that you won't end up stranding yourself with an obsolete test suite and a bunch of refactored, untested code. We're not going to talk about how to test here, since this post is just about our philosophy surrounding testing, but we will probably write a post in the future about how to test.
 
 

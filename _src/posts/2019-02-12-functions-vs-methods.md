@@ -1,6 +1,6 @@
     Title: Functions vs. Methods
     Date: 2019-02-12T18:02:04
-    Tags: terminology, functions, methods
+    Tags: terminology
 
 The words "function" and "method" are thrown around a lot and may seem interchangeable, but are they really?
 

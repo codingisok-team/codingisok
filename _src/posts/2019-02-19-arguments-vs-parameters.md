@@ -1,6 +1,6 @@
     Title: Arguments vs. Parameters
     Date: 2019-02-19T13:30:24
-    Tags: terminology, functions, methods, arguments, parameters
+    Tags: terminology
 
 The words "argument" and "parameter" are thrown around a lot in similar contexts, but what's the difference? 
 
