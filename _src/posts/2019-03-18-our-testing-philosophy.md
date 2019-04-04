@@ -135,7 +135,7 @@ A few issues to consider before committing to this design though: to "remove" an
 
 You realize that there are some flaws with your current approach — the menu isn't saved anywhere, there's a lot of typing involved, and it's easy to make a mistake when entering orders. You decide to go back to the drawing board.
 
-```
+```python
 class Food(object):
   """A container to make it easy to group names and costs."""
 
@@ -237,7 +237,7 @@ That said, there are still a few problems: the grouping issue that Option 1 had 
 
 ### Option 3: Fanciest Programming
 
-```
+```python
 import sys
 
 
@@ -476,7 +476,7 @@ Command? <Ctrl-C>
 $
 ```
 
-Whoof, this one's a long one. Buuuuuuut now your sibling can't permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all! 
+Whoof, this one's a long one. Buuuuuuut now your sibling can't permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all!
 
 In fact, this program isn't even that complicated once you break it down: in order to keep track of toppings vs. sides, you had to add a few classes to create a hierarchy, so you have a handful of functions (all those `handle_<object>_command` functions) that are the same basic function modified for each new class. Note that the menu is read in from an external file when the program is launched, keeping it safe from any meddling younger siblings.
 

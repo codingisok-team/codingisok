@@ -15,7 +15,7 @@
   (~> xs
       (syntax-highlight #:python-executable "python"
                         #:line-numbers? #t
-                        #:css-class "source")
+                        #:css-class "highlight")
       (auto-embed-tweets #:parents? #t)
       (add-racket-doc-links #:code? #t #:prose? #f)))
 
