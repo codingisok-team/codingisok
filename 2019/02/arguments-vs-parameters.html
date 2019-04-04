@@ -120,25 +120,55 @@
 
 <p>Let&rsquo;s pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:<sup><a href="#2019-02-19-arguments-vs-parameters-footnote-2-definition" name="2019-02-19-arguments-vs-parameters-footnote-2-return">2</a></sup></p>
 
-<pre><code>import java.util.List;
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-public class IntAdder {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntAdder</span> <span class="o">{</span>
 
-	public static int add(int a, int b){
-		return a+b;
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">){</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public static int add(List&lt;Integer&gt; nums){
-		int sum = 0;
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nums</span><span class="o">){</span>
+		<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-		for (int i : nums){
-			sum += i;
-		}
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">nums</span><span class="o">){</span>
+			<span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span>
 
-		return sum;
-	}
+		<span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Note that you, a clever person, have used method overloading here to allow yourself to add together either two ints or a <code>List</code> of <code>Integers</code> (a.k.a. any number of integers).</p>
 
@@ -154,13 +184,37 @@ public class IntAdder {
 
 <p>O.K., time to actually use these methods! Quick — what&rsquo;s 12,345 + 67,890? ¯\_(ツ)_/¯ Good thing you just wrote a method to figure it out! You make a call to <code>add()</code>, using the arguments <code>12345</code> and <code>67890</code>:</p>
 
-<pre><code>add(12345, 67890);</code></pre>
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="n">add</span><span class="o">(</span><span class="mi">12345</span><span class="o">,</span> <span class="mi">67890</span><span class="o">);</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Since you used two <code>int</code>s as arguments, your <code>IntAdder</code> class knows to use your first method (the one with <code>int</code> parameters <code>a</code> and <code>b</code>), which returns the answer 80,235.</p>
 
 <p>More practically though, let&rsquo;s pretend you&rsquo;re a teacher who wants to find a student&rsquo;s grade average. You already have an <code>ArrayList</code> of the student&rsquo;s grades called <code>studentGrades</code> (don&rsquo;t ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your <code>add()</code> method, you can make a call to it to find the sum of the student&rsquo;s grades:</p>
 
-<pre><code>add(studentGrades);</code></pre>
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="n">add</span><span class="o">(</span><span class="n">studentGrades</span><span class="o">);</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Since you used one <code>ArrayList</code> as your argument, your <code>IntAdder</code> class knows to use your second method (the one with <code>List</code> parameter <code>nums</code>), which returns the sum of all the grades. Now all you need to do is divide that sum by the total number of grades that was in the <code>ArrayList</code> and you&rsquo;ll have your average!</p>
 

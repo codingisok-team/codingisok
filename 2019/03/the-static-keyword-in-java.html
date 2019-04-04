@@ -118,43 +118,97 @@
 
 <p>Fun fact: for the most basic possible calculator, you won&rsquo;t ever need to create an instance of your class. Why? Because the calculator doesn&rsquo;t need to save anything, just perform operations and return results.</p>
 
-<pre><code>public class StaticCalculator {
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StaticCalculator</span> <span class="o">{</span>
 
-	public static double add(double a, double b){
-		return a+b;
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">add</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public static double subtract(double a, double b){
-		return a-b;
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">subtract</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public static double multiply(double a, double b){
-		return a*b;
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public static double divide(double a, double b){
-		return a/b;
-	}
-	
-}
-</code></pre>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">divide</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>To use this calculator, all you would need to do is call your desired method by referencing the class name, like so:</p>
 
-<pre><code>public class StaticCalculatorExample {
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StaticCalculatorExample</span> <span class="o">{</span>
 
-	public static void main(String[] args) {
-		// You don't need an instance.
-		System.out.println(StaticCalculator.add(1.0, 2.0)); // 3.0
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// You don&#39;t need an instance.</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">StaticCalculator</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 3.0</span>
 
-		System.out.println(StaticCalculator.subtract(1.0, 2.0)); // -1.0
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">StaticCalculator</span><span class="o">.</span><span class="na">subtract</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// -1.0</span>
 
-		System.out.println(StaticCalculator.multiply(1.0, 2.0)); // 2.0
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">StaticCalculator</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 2.0</span>
 
-		System.out.println(StaticCalculator.divide(1.0, 2.0)); // 0.5
-	}
-	
-}</code></pre>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">StaticCalculator</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 0.5</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Note that if you want to perform multiple operations in a row with this calculator, you would need to pass your previous result in to your next call as an argument.</p>
 
@@ -162,74 +216,161 @@
 
 <p>O.K., that other calculator was fine and dandy and simple and whatever, but what if you want to be able to perform operations on your last result? Here&rsquo;s where instances and non-<code>static</code> methods and come in.</p>
 
-<pre><code>public class InstanceCalculator {
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InstanceCalculator</span> <span class="o">{</span>
 
-	private double res = 0.0;
+	<span class="kd">private</span> <span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
 
-	public double add(double a, double b){
-		res = a+b;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">add</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double add(double a){
-		res = res+a;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">add</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">+</span><span class="n">a</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double subtract(double a, double b){
-		res = a-b;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">subtract</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double subtract(double a){
-		res = res-a;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">subtract</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">-</span><span class="n">a</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double multiply(double a, double b){
-		res = a*b;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double multiply(double a){
-		res = res*a;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">*</span><span class="n">a</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double divide(double a, double b){
-		res = a/b;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">divide</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public double divide(double a){
-		res = res/a;
-		return res;
-	}
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">divide</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">){</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">/</span><span class="n">a</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>To use this calculator, you need to create an instance of the calculator and perform your operations through that instance, like so:</p>
 
-<pre><code>public class InstanceCalculatorExample {
-	
-	public static void main(String[] args) {
-		// You need an instance.
-		InstanceCalculator calculator = new InstanceCalculator();
+<div class="brush: java">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InstanceCalculatorExample</span> <span class="o">{</span>
 
-		System.out.println(calculator.add(1.0, 2.0)); // 3.0
-		System.out.println(calculator.add(2.0)); // 5.0
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// You need an instance.</span>
+		<span class="n">InstanceCalculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InstanceCalculator</span><span class="o">();</span>
 
-		System.out.println(calculator.subtract(1.0, 2.0)); // -1.0
-		System.out.println(calculator.subtract(2.0)); // -3.0
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 3.0</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 5.0</span>
 
-		System.out.println(calculator.multiply(1.0, 2.0)); // 2.0
-		System.out.println(calculator.multiply(2.0)); // 4.0
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">subtract</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// -1.0</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">subtract</span><span class="o">(</span><span class="mf">2.0</span><span class="o">));</span> <span class="c1">// -3.0</span>
 
-		System.out.println(calculator.divide(1.0, 2.0)); // 0.5
-		System.out.println(calculator.divide(2.0)); // 0.25
-	}
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 2.0</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 4.0</span>
 
-}</code></pre>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="mf">1.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 0.5</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculator</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="mf">2.0</span><span class="o">));</span> <span class="c1">// 0.25</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Note that</p>
 

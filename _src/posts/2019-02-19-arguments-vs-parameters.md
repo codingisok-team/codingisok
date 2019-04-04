@@ -2,7 +2,7 @@
     Date: 2019-02-19T13:30:24
     Tags: terminology
 
-The words "argument" and "parameter" are thrown around a lot in similar contexts, but what's the difference? 
+The words "argument" and "parameter" are thrown around a lot in similar contexts, but what's the difference?
 
 Spoiler alert: parameters are used in reference to arguments.
 
@@ -22,7 +22,7 @@ Let's pretend you want to add integers together. Lots of integers. For some reas
 
 [^2]: If you need an explanation for why you decided to use static methods, we wrote a post all about the `static` keyword [here](https://codingisok.com/2019/03/the-static-keyword-in-java.html)!
 
-```
+```java
 import java.util.List;
 
 public class IntAdder {
@@ -57,7 +57,7 @@ The second method takes in a `List` (e.g. an `ArrayList`, a `LinkedList`, etc.) 
 
 O.K., time to actually use these methods! Quick — what's 12,345 + 67,890? ¯\\_(ツ)_/¯ Good thing you just wrote a method to figure it out! You make a call to `add()`, using the arguments `12345` and `67890`:
 
-```
+```java
 add(12345, 67890);
 ```
 
@@ -65,7 +65,7 @@ Since you used two `int`s as arguments, your `IntAdder` class knows to use your 
 
 More practically though, let's pretend you're a teacher who wants to find a student's grade average. You already have an `ArrayList` of the student's grades called `studentGrades` (don't ask me why). As you may recall, an average of n numbers is the sum of the numbers divided by n. Since you have your `add()` method, you can make a call to it to find the sum of the student's grades:
 
-```
+```java
 add(studentGrades);
 ```
 

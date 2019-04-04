@@ -23,20 +23,20 @@ Using an example is probably the easiest way to demonstrate the difference betwe
 
 If we want to use a function, then the grade average must be calculated outside of the Student class. That means our `calculate_average` function is a simple average calculator (i.e. sum of student's grades divided by the total number of grades) and needs outsider access to the student's information.
 
-```
+```java
 class FunctionalStudent(object):
-  
+
   def __init__(self, name):
     self._name = name
     self._grades = []
 
   def get_grades(self):
     return self._grades
-  
+
   def add_grade(self, new_grade):
     self._grades.append(new_grade)
 
-def calculate_average(student): 
+def calculate_average(student):
   grades = student.get_grades()
   return sum(grades) / len(grades)
 
@@ -46,11 +46,11 @@ Note that the student instance itself doesn't know its own average, and that the
 
 ### The "Methodic" Way
 
-If, on the other hand, we want to use a method, then the grade average must by definition be calculated inside of the Student class. In this case, the student instance itself will keep track of its own average, which is both more efficient and more secure. 
+If, on the other hand, we want to use a method, then the grade average must by definition be calculated inside of the Student class. In this case, the student instance itself will keep track of its own average, which is both more efficient and more secure.
 
-```
+```java
 class MethodicStudent(object):
-  
+
   def __init__(self, name):
     self._name = name
     self._grades = []

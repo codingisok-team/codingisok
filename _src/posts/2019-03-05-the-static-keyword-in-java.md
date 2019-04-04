@@ -18,7 +18,7 @@ Let's say you want to build your own, customized calculator. Yeah you could just
 
 Fun fact: for the most basic possible calculator, you won't ever need to create an instance of your class. Why? Because the calculator doesn't need to save anything, just perform operations and return results.
 
-```
+```java
 public class StaticCalculator {
 
 	public static double add(double a, double b){
@@ -36,14 +36,14 @@ public class StaticCalculator {
 	public static double divide(double a, double b){
 		return a/b;
 	}
-	
+
 }
 
 ```
 
 To use this calculator, all you would need to do is call your desired method by referencing the class name, like so:
 
-```
+```java
 public class StaticCalculatorExample {
 
 	public static void main(String[] args) {
@@ -56,7 +56,7 @@ public class StaticCalculatorExample {
 
 		System.out.println(StaticCalculator.divide(1.0, 2.0)); // 0.5
 	}
-	
+
 }
 ```
 
@@ -66,7 +66,7 @@ Note that if you want to perform multiple operations in a row with this calculat
 
 O.K., that other calculator was fine and dandy and simple and whatever, but what if you want to be able to perform operations on your last result? Here's where instances and non-`static` methods and come in.
 
-```
+```java
 public class InstanceCalculator {
 
 	private double res = 0.0;
@@ -116,9 +116,9 @@ public class InstanceCalculator {
 
 To use this calculator, you need to create an instance of the calculator and perform your operations through that instance, like so:
 
-```
+```java
 public class InstanceCalculatorExample {
-	
+
 	public static void main(String[] args) {
 		// You need an instance.
 		InstanceCalculator calculator = new InstanceCalculator();
@@ -139,7 +139,7 @@ public class InstanceCalculatorExample {
 }
 ```
 
-Note that 
+Note that
 
 1. this calculator class has twice as many methods (i.e. two methods per arithmetical option) so as to allow the user to perform either operations on the last result or entirely new operations, and
 
