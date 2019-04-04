@@ -49,8 +49,13 @@ def get_food_from_console():  # Returns a str
   """
   pass
 
+
 def get_cost_from_console():  # Returns a float
+  """
+  Returns (str, False) if the user entered a cost, (None, True) otherwise.
+  """
   pass
+
 
 def make_receipt(order_number, order):  # Returns a str
   """
@@ -66,6 +71,7 @@ def make_receipt(order_number, order):  # Returns a str
   """
   pass
 
+
 def main():
   order_number = 1
 
@@ -75,8 +81,8 @@ def main():
     while not done:
       food, done = get_food_from_console()
       if food:
-        cost = get_cost_from_console()
-        order.append(food, cost)
+        cost, done = get_cost_from_console()
+        order.append((food, cost))
 
     if order:
       print(make_receipt(order_number, order))
@@ -86,7 +92,9 @@ def main():
 Example usage:
 
 ```
-$ python3 hot_dogge.py
+"""Example usage:
+
+$ python3 hot_dogge1.py
 Food? Fries
 Cost? 1.00
 
@@ -145,12 +153,9 @@ MENU = {
 
 def get_food_from_console():
   """
-  Returns (bool, str, False) if the user inputs a food
-    bool for whether to add or remove the food
-    str for the food's identifier
-    False to indicate that the user isn't done
-
-  Returns (None, None, True) if the user doesn't input a food.
+  Returns (should_add=bool, str, False) if the user entered a food,
+  (None, None, False) if the user entered an unrecognized command,
+  (None, None, True) otherwise.
   """
   pass
 
@@ -183,12 +188,20 @@ def main():
     while not done:
       should_add, identifier, done = get_food_from_console()
       if identifier is not None:
-        food = MENU[identifier]
+        if identifier in MENU:
+          food = MENU[identifier]
+        else:
+          # This food isn't in the menu, print an error
+          continue
 
         if should_add:
           order.append(food)
         else:
-          order.remove(food)
+          if food in order:
+            order.remove(food)
+          else:
+            # We can't remove a food if it isn't in the order; print an error
+            pass
 
     if order:
       print(make_receipt(order_number, order))
@@ -199,11 +212,11 @@ Example usage:
 
 ```
 $ python3 hot_dogge2.py
-Item? A1
-Item? A2
-Item? remove A2
-Item? A2
-Item? A3
+Item? A
+Item? B
+Item? remove B
+Item? B
+Item? C
 Item?
 
   Order #1
@@ -225,11 +238,14 @@ That said, there are still a few problems: the grouping issue that Option 1 had 
 ### Option 3: Fanciest Programming
 
 ```
+import sys
+
+
 class Menu(object):
   """A menu object.
 
   The user is able to add/amend menu entries.
-    Adding lets you create custom items — they are lost when the program stops.
+    Adding lets you create custom items -- they are lost when the program stops.
     Amending lets you change the name and/or cost of a food on the menu.
   """
 
@@ -291,9 +307,34 @@ def make_receipt(order):  # Returns a str
   pass
 
 
+def get_command():  # Returns the user's input as a str
+  pass
+
+
+def parse(command):
+  """
+  Takes a str command and parses it into a subject str and subcommand str.
+
+  e.g:
+    >>> parse('menu add D "Mayonnaise" $0.50')
+    'menu', 'add D "Mayonnaise" $0.50'
+
+  If the first string is not 'menu', 'order', or 'item', then we infer that the
+  subject is a food, e.g:
+    >>> parse('A')
+    'food', 'A'
+    >>> parse('A B C')
+    'food', 'A B C'
+  """
+  return None, None  # Just to satisy the python interpreter
+
+
 def handle_menu_command(menu, subcommand):
   """
   Parses subcommand and modifies the menu accordingly.
+
+  Note: it's an error to add menu entries with the names "menu", "item", or
+  "order", because those strings are interpreted as commands by the program.
   """
   pass
 
@@ -354,6 +395,8 @@ def main():
       handle_item_command(order, subcommand)
     elif subject == 'food':
       handle_food_command(order, subcommand)
+    else:
+      # Unrecognized command, print an error
 
     print(make_receipt(order))
     order_number += 1
@@ -464,7 +507,7 @@ More generally, the hierarchy works like this:
 	- **`add <food_id> "<name>" <cost>`** → add a new food option to the menu (note that if the program is restarted, this new item will not persist, so this option is a good way to add a temporary item like a special of the day)
 	- **`edit <food_id> "<name>" <cost>`** → modify an existing food option on the menu (note that the `<food_id>` stays the same, but the `name` and `cost` of the item may be modified. this is the only way to effectively delete an item from the menu without modifying the menu file and restarting the program)
 
-- **`<food_id> ...`** → add an item consisting of one or more food to the current order
+- **`<food_id> ...`** → add an item consisting of one or more foods to the current order
 
 - **`item`** → commands related to modifying an item in the current order
 	- **`<item_id> add <food_id>`** → add food `<food_id>` to item `<item_id>`
