@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>coding is ok: Posts tagged 'testing'</title>
+  <description>coding is ok: Posts tagged 'testing'</description>
+  <link>http://codingisok.com/tags/testing.html</link>
+  <lastBuildDate>Tue, 19 Mar 2019 00:53:17 UT</lastBuildDate>
+  <pubDate>Tue, 19 Mar 2019 00:53:17 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Our Testing Philosophy</title>
+   <link>http://codingisok.com/2019/03/our-testing-philosophy.html?utm_source=testing&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-codingisok-com:-2019-03-our-testing-philosophy-html</guid>
+   <pubDate>Tue, 19 Mar 2019 00:53:17 UT</pubDate>
+   <author>lan-party</author>
+   <description>
+&lt;p&gt;To test or not to test, that is the question (jkjk don&amp;rsquo;t be a dumbus; TEST YOUR CODE). The real question is, when and how to test?&lt;/p&gt;
+
+&lt;p&gt;Spoiler alert: we&amp;rsquo;re not the biggest fans of test-driven development.&lt;/p&gt;&lt;a href="http://codingisok.com/2019/03/our-testing-philosophy.html?utm_source=testing&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

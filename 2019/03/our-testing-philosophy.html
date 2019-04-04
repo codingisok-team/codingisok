@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Our Testing Philosophy</title>
+    <meta name="description" content="To test or not to test, that is the question (jkjk don't be a dumbus; TEST YOUR CODE). The real question is, when and how to test?  Spoiler alert: we're not the biggest fans of test-driven development....">
+    <meta name="author"      content="lan-party">
+    <meta name="keywords"    content="general, testing">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://codingisok.com/2019/03/our-testing-philosophy.html">
+    <link rel="next" href="/2019/03/the-static-keyword-in-java.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+
+      <a href="/index.html" class="navbar-brand">Coding is O.K.</a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar_collapse" aria-controls="navbar_collapse"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/general.html">general</a><a class="dropdown-item" href="/tags/java.html">java</a><a class="dropdown-item" href="/tags/keywords.html">keywords</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/testing.html">testing</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/FAQ.html">F.A.Q.</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/resources.html">Resources</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+      </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Our Testing Philosophy</h1>
+    <p class='date-and-tags'>
+<time datetime="2019-03-18" pubdate="true">2019-03-18</time> :: <span class="tags"><a href="/tags/general.html">general</a>, <a href="/tags/testing.html">testing</a></span></p>
+    <p class='authors'>By: <span class="authors">lan-party</span></p>
+  </header>
+
+<p>To test or not to test, that is the question (jkjk don&rsquo;t be a dumbus; TEST YOUR CODE). The real question is, when and how to test?</p>
+
+<p>Spoiler alert: we&rsquo;re not the biggest fans of test-driven development.</p>
+<!-- more-->
+
+<h1 id="a-few-common-approaches-to-testing">A few common approaches to testing</h1>
+
+<ol>
+ <li>
+  <p>No testing whatsoever, or: write the entire program and, when it fails, give  up. We don&rsquo;t recommend this method.</p></li>
+ <li>
+  <p>Inserting &ldquo;helpful&rdquo; print statements, or: write some code and, when it  fails, print out some hopefully useful values and place markers to track  down the bugs. This method is inelegant, but can get the job done if you  know what you&rsquo;re doing. We <em>don&rsquo;t not</em> recommend this method, but if something  breaks, you&rsquo;ll have some re-testing to do. Also it makes your code messy. Also also it makes it hard for anyone else to dive in and feel confident they&rsquo;re not breaking something since you don&rsquo;t have a test suite.</p></li>
+ <li>
+  <p>Test-driven development (TDD), or: write an excessive number of debatably-useful tests before writing any code. Then write some code and fix  any bugs using the testing output. Rinse and repeat. TDD is trendy approach at  the moment, but honestly not our favorite; we think TDD is pedantic and  cumbersome and cements your program&rsquo;s design before you&rsquo;ve even decided what the best design is.</p></li></ol>
+
+<h1 id="our-approach-to-testing">Our approach to testing</h1>
+
+<p>We believe a good program begins with a program outline (just like how you&rsquo;re supposed to create an outline before writing that essay about <a href="http://www.harkavagrant.com/index.php?id=202"><em>The Tenant of Wildfell Hall</em> and how Anne Brontë was ahead of her time and is still completely underrated</a>, or at least that&rsquo;s what our high school English teachers told us to do). A program outline allows the coder to determine the general structure and flow of the program including core classes, methods, functions, and variables. No real code is necessary here, pseudocode and stubs are fine to get the point across. Once you have a general outline, then you can start writing tests, feeling confident that you (probably) won&rsquo;t have to frantically change a bunch of names and refactor like, 10 times.</p>
+
+<h2 id="case-study-hot-dog-order-tracker">Case Study: Hot Dog Order Tracker</h2>
+
+<p>You are a 10-year-old, newly-minted, proud owner of a hot dog stand who needs a way to keep track of orders. Fortunately, you&rsquo;re also a <a href="https://crouton.net"><em>seasoned</em> programmer</a> (geddit??). You decide to code an order tracker that will allow you to input orders and display an itemized receipt when an order is completed, including a unique order number. Since you&rsquo;re a child, you don&rsquo;t need to worry about taxes. Or working, actually — why are you running a business anyway?</p>
+
+<h3 id="option-1-basic-programming-not-to-be-confused-with-httpsenwikipediaorgwikibasicbasic-programming">Option 1: Basic Programming (not to be confused with <a href="https://en.wikipedia.org/wiki/BASIC">BASIC</a> programming)</h3>
+
+<p>You want to feel like you know what you&rsquo;re doing, so you figure you&rsquo;ll start with something simple: have the program take in the name of each item and its cost. Done!</p>
+
+<div class="brush: python">
+ <pre><code>def get_food_from_console():  # Returns a str
+  """
+  Returns (str, False) if the user entered a food, (None, True) otherwise.
+  """
+  pass
+
+
+def get_cost_from_console():  # Returns a float
+  """
+  Returns (str, False) if the user entered a cost, (None, True) otherwise.
+  """
+  pass
+
+
+def make_receipt(order_number, order):  # Returns a str
+  """
+  Prints the receipt nicely, for example:
+
+    Order #5
+
+    Fries:   $1.00
+    Hot Dog: $2.00
+    Ketchup: $0.50
+
+    Total:   $3.50
+  """
+  pass
+
+
+def main():
+  order_number = 1
+
+  while True:
+    done = False
+    order = []
+    while not done:
+      food, done = get_food_from_console()
+      if food:
+        cost, done = get_cost_from_console()
+        order.append((food, cost))
+
+    if order:
+      print(make_receipt(order_number, order))
+      order_number += 1</code></pre></div>
+
+<p>Example usage:</p>
+
+<pre><code>"""Example usage:
+
+$ python3 hot_dogge1.py
+Food? Fries
+Cost? 1.00
+
+Food? Hot Dog
+Cost? 2.00
+
+Food? Ketchpu
+Cost? 0.50
+
+Food? Ketchpu
+Cost? -0.50
+
+Food? Ketchup
+Cost? 0.50
+
+Food?
+
+  Order #1
+
+  Fries:    $1.00
+  Hot Dog:  $2.00
+  Ketchpu:  $0.50
+  Ketchpu: -$0.50
+  Ketchup:  $0.50
+
+  Total:    $3.50
+
+Food? &lt;Ctrl-C&gt;
+$</code></pre>
+
+<p>O.K., it may look like you just wrote most of this program, but because the design is so simple, this pseudocode happens to be mostly executable. If this was your finalized design, here would be the point where we would advocate to start writing tests.</p>
+
+<p>A few issues to consider before committing to this design though: to &ldquo;remove&rdquo; an item from the order, you need to add an item with a negative cost — kinda clunky, but functional. There also isn&rsquo;t any grouping in the order; that is, it&rsquo;s not obvious if ketchup is supposed to be a side or go on the hot dog. You could always specify in the name of the item, but maybe that&rsquo;s too much of a bother.</p>
+
+<h3 id="option-2-fancier-programming">Option 2: Fancier Programming</h3>
+
+<p>You realize that there are some flaws with your current approach — the menu isn&rsquo;t saved anywhere, there&rsquo;s a lot of typing involved, and it&rsquo;s easy to make a mistake when entering orders. You decide to go back to the drawing board.</p>
+
+<pre><code>class Food(object):
+  """A container to make it easy to group names and costs."""
+
+  def __init__(self, name, cost):
+    self.name = name
+    self.cost = cost
+
+
+MENU = {
+  'A': Food('Fries', 1.00),
+  'B': Food('Hot Dog', 2.00),
+  'C': Food('Ketchup', 0.50),
+}
+
+
+def get_food_from_console():
+  """
+  Returns (should_add=bool, str, False) if the user entered a food,
+  (None, None, False) if the user entered an unrecognized command,
+  (None, None, True) otherwise.
+  """
+  pass
+
+
+def make_receipt(order_number, order):  # Returns a str
+  """
+  Prints the receipt nicely, for example:
+
+    Order #5
+
+    Fries:   $1.00
+    Hot Dog: $2.00
+    'Chup:   $0.50
+
+    Total:   $3.50
+
+  Note: Contrasting with the make_receipt function in Option 1, this function
+  deals with Food objects instead of (str, float) tuples.
+  """
+  pass
+
+
+def main():
+  order_number = 1
+
+  # Assumes the input is either "&lt;ID&gt;" or "remove &lt;ID&gt;"
+  while True:
+    done = False
+    order = []
+    while not done:
+      should_add, identifier, done = get_food_from_console()
+      if identifier is not None:
+        if identifier in MENU:
+          food = MENU[identifier]
+        else:
+          # This food isn't in the menu, print an error
+          continue
+
+        if should_add:
+          order.append(food)
+        else:
+          if food in order:
+            order.remove(food)
+          else:
+            # We can't remove a food if it isn't in the order; print an error
+            pass
+
+    if order:
+      print(make_receipt(order_number, order))
+      order_number += 1</code></pre>
+
+<p>Example usage:</p>
+
+<pre><code>$ python3 hot_dogge2.py
+Item? A
+Item? B
+Item? remove B
+Item? B
+Item? C
+Item?
+
+  Order #1
+
+  Fries:    $1.00
+  Hot Dog:  $2.00
+  Ketchup:  $0.50
+
+  Total:    $3.50
+
+Item? &lt;Ctrl-C&gt;
+$</code></pre>
+
+<p>On the bright side, this approach makes it much easier to create orders and fix mistakes. It&rsquo;s also impossible to mis-type a food name or cost, and mistakes don&rsquo;t show up in the final receipt.</p>
+
+<p>That said, there are still a few problems: the grouping issue that Option 1 had is still around (is the ketchup a side or on the hot dog???) and since the menu is hard-coded within the program, you can&rsquo;t make custom orders — that is, you can&rsquo;t change the without changing the program itself. This is especially bad when it&rsquo;s your younger sibling&rsquo;s shift and they in their infinite wisdom attempt to make everything cost $1000.00 but screw up the code instead.</p>
+
+<h3 id="option-3-fanciest-programming">Option 3: Fanciest Programming</h3>
+
+<pre><code>import sys
+
+
+class Menu(object):
+  """A menu object.
+
+  The user is able to add/amend menu entries.
+    Adding lets you create custom items -- they are lost when the program stops.
+    Amending lets you change the name and/or cost of a food on the menu.
+  """
+
+
+def create_menu(filename):
+  """
+  Creates a menu from a file of items.
+
+  Crashes if the file repeats an ID.
+  """
+  pass
+
+
+class Food(object):
+  """A container to make it easy to group names and costs."""
+
+  def __init__(self, name, cost):
+    self.name = name
+    self.cost = cost
+
+
+class Item(object):
+  """Groups Foods together, e.g. Fries with Ketchup and Mayonnaise."""
+
+  def __init__(self, foods=None):
+    self.foods = foods or []  # list of Food
+
+
+class Order(object):
+  """Groups Items together, e.g. [Fries with Mayonnaise, Hot Dog with 'Chup]."""
+
+  def __init__(self, number):
+    self.number = number
+    self.items = dict()  # dict of item_id: [Item]
+
+  def generate_item_id(self):  # Returns a unique identifier str
+    pass
+
+
+def make_receipt(order):  # Returns a str
+  """
+  Prints the receipt nicely, for example:
+
+    Order #5
+
+    Fries           $1.00
+      w/ Ketchup    $0.50
+      w/ Mayonnaise $0.50
+
+    Hot Dog:        $2.00
+      w/ Ketchup    $0.50
+
+    Total:          $4.50
+
+  Note: Contrasting with the make_receipt function in Option 2, this function
+  deals with Order objects, which are now more complex and represent a
+  hierarchy.
+  """
+  pass
+
+
+def get_command():  # Returns the user's input as a str
+  pass
+
+
+def parse(command):
+  """
+  Takes a str command and parses it into a subject str and subcommand str.
+
+  e.g:
+    &gt;&gt;&gt; parse('menu add D "Mayonnaise" $0.50')
+    'menu', 'add D "Mayonnaise" $0.50'
+
+  If the first string is not 'menu', 'order', or 'item', then we infer that the
+  subject is a food, e.g:
+    &gt;&gt;&gt; parse('A')
+    'food', 'A'
+    &gt;&gt;&gt; parse('A B C')
+    'food', 'A B C'
+  """
+  return None, None  # Just to satisy the python interpreter
+
+
+def handle_menu_command(menu, subcommand):
+  """
+  Parses subcommand and modifies the menu accordingly.
+
+  Note: it's an error to add menu entries with the names "menu", "item", or
+  "order", because those strings are interpreted as commands by the program.
+  """
+  pass
+
+
+def handle_order_command(order, subcommand):
+  """
+  Parses subcommand and modifies the order accordingly.
+  """
+  pass
+
+
+def handle_item_command(order, subcommand):
+  """
+  Parses subcommand and modifies the order accordingly.
+  """
+  pass
+
+
+def handle_food_command(order, subcommand):
+  """
+  Parses subcommand and modifies the order accordingly.
+  """
+  pass
+
+
+def main():
+  if len(sys.argv) &lt;= 1:
+    menu = Menu()
+  else:
+    menu = create_menu(sys.argv[1])
+
+  # Commands:
+  #
+  # menu add &lt;food_id&gt; "&lt;name&gt;" &lt;cost&gt;
+  # menu edit &lt;food_id&gt; "&lt;name&gt;" &lt;cost&gt;
+  #
+  # &lt;food_id&gt;               (item with one food)
+  # &lt;food_id&gt; &lt;food_id&gt; ... (item with multiple foods)
+  #
+  # item &lt;item_id&gt; add &lt;food_id&gt;    (retroactively add a food to an item)
+  # item &lt;item_id&gt; remove &lt;food_id&gt; (retroactively remove a food from an item)
+  #
+  # order add "&lt;name&gt;" &lt;cost&gt; (add a special item to the order)
+  #                           (can be used to add a discount)
+  # order remove &lt;item_id&gt;
+  # order end (finish the current order and print its receipt)
+
+  order_number = 1
+  while True:
+    order = Order(order_number)
+
+    subject, subcommand = parse(get_command())
+    if subject == 'menu':
+      handle_menu_command(menu, subcommand)
+    elif subject == 'order':
+      handle_order_command(order, subcommand)
+    elif subject == 'item':
+      handle_item_command(order, subcommand)
+    elif subject == 'food':
+      handle_food_command(order, subcommand)
+    else:
+      # Unrecognized command, print an error
+
+    print(make_receipt(order))
+    order_number += 1</code></pre>
+
+<p>Example usage:</p>
+
+<pre><code>$ python3 hot_dogge3.py ~/Desktop/no_younger_siblings_allowed/menu.txt
+Parsed menu:
+  A: Fries      $1.00
+  B: Hot Dog    $2.00
+  C: Ketchup    $0.50
+
+Order #1
+Command? menu add D "Mayonnaise" $0.50
+Command? A C D
+  item id = 1
+    Fries           $1.00
+      w/ Ketchup    $0.50
+      w/ Mayonnaise $0.50
+
+Command? B
+  item id = 2
+    Hot Dog:        $2.00
+
+Command? item 2 add C
+  modified item 2:
+    Hot Dog:        $2.00
+      w/ Ketchup    $0.50
+
+Command? item 2 add C
+  modified item 2:
+    Hot Dog:        $2.00
+      w/ Ketchup    $0.50
+      w/ Ketchup    $0.50
+
+Command? item 2 remove C
+  modified item 2:
+    Hot Dog:        $2.00
+      w/ Ketchup    $0.50
+
+Command? C
+  item id = 3
+    Ketchup:        $0.50
+
+Command? D
+  item id = 4
+    Mayonnaise:     $0.50
+
+Command? order remove 5
+  removed item 4:
+    Mayonnaise:     $0.50
+
+Command? order 1 add "special friend discount" -$1.00
+  item id = 5
+    special friend discount: -$1.00
+
+Command? order end
+
+  Order #1
+    Fries                     $1.00
+      w/ Ketchup              $0.50
+      w/ Mayonnaise           $0.50
+
+    Hot Dog                   $2.00
+      w/ Ketchup              $0.50
+
+    Ketchup                   $0.50
+
+    special friend discount: -$1.00
+
+    Total:                    $4.00
+
+Order #2
+Command? &lt;Ctrl-C&gt;
+$</code></pre>
+
+<p>Whoof, this one&rsquo;s a long one. Buuuuuuut now your sibling can&rsquo;t permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all!</p>
+
+<p>In fact, this program isn&rsquo;t even that complicated once you break it down: in order to keep track of toppings vs. sides, you had to add a few classes to create a hierarchy, so you have a handful of functions (all those <code>handle_&lt;object&gt;_command</code> functions) that are the same basic function modified for each new class. Note that the menu is read in from an external file when the program is launched, keeping it safe from any meddling younger siblings.</p>
+
+<h4 id="a-new-hierarchy">A New Hierarchy</h4>
+
+<p>Now, instead of just having orders comprised of items, you have a <code>Menu</code> object which contains <code>Food</code> objects, and <code>Order</code> objects which contain <code>Item</code> objects which are actually just one or more <code>Food</code> objects. This way, your program knows how to group foods within an order when it prints out the receipt; that is, it will print out each <code>Item</code> object as its own block of foods.</p>
+
+<p>More generally, the hierarchy works like this:</p>
+
+<pre><code>- Menu
+  - Food
+  - Food
+  - Food
+  - Food
+  - Food
+
+- Order
+  - Item
+    - Food
+    - Food
+    - Food
+  - Item
+    - Food</code></pre>
+
+<h4 id="decisions-decisions-decisions">Decisions, decisions, decisions!</h4>
+
+<ul>
+ <li><strong><code>menu</code></strong> → commands related to modifying the menu
+  <ul>
+   <li><strong><code>add &lt;food_id&gt; "&lt;name&gt;" &lt;cost&gt;</code></strong> → add a new food option to the menu (note that if the program is restarted, this new item will not persist, so this option is a good way to add a temporary item like a special of the day)</li>
+   <li><strong><code>edit &lt;food_id&gt; "&lt;name&gt;" &lt;cost&gt;</code></strong> → modify an existing food option on the menu (note that the <code>&lt;food_id&gt;</code> stays the same, but the <code>name</code> and <code>cost</code> of the item may be modified. this is the only way to effectively delete an item from the menu without modifying the menu file and restarting the program)</li></ul></li>
+ <li>
+  <p><strong><code>&lt;food_id&gt; ...</code></strong> → add an item consisting of one or more foods to the current order</p></li>
+ <li><strong><code>item</code></strong> → commands related to modifying an item in the current order
+  <ul>
+   <li><strong><code>&lt;item_id&gt; add &lt;food_id&gt;</code></strong> → add food <code>&lt;food_id&gt;</code> to item <code>&lt;item_id&gt;</code></li>
+   <li><strong><code>&lt;item_id&gt; remove &lt;food_id&gt;</code></strong> → remove food <code>&lt;food_id&gt;</code> from item <code>&lt;item_id&gt;</code></li></ul></li>
+ <li><strong><code>order</code></strong> → commands related to modifying the current order
+  <ul>
+   <li><strong><code>add "&lt;name&gt;" &lt;cost&gt;</code></strong> → add a special item to the current order (note that this option can be used to add either custom items with a positive cost, or discounts with a negative cost)</li>
+   <li><strong><code>remove &lt;item_id&gt;</code></strong> → remove item <code>&lt;item_id&gt;</code> from the order (note that the item id will not be re-used if another item is added to the current order)</li>
+   <li><strong><code>end</code></strong> → end the current order and print the receipt</li></ul></li></ul>
+
+<h2 id="the-aftermath">The Aftermath</h2>
+
+<p>Now that you&rsquo;ve squared away your design, you can finally break out the fancy TDD toolbox and start writing incremental tests, confident that you won&rsquo;t end up stranding yourself with an obsolete test suite and a bunch of refactored, untested code. We&rsquo;re not going to talk about how to test here, since this post is just about our philosophy surrounding testing, but we will probably write a post in the future about how to test.</p>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://codingisok.com/2019/03/our-testing-philosophy.html"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://codingisok.com/2019/03/our-testing-philosophy.html"></g:plusone>
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2019/03/the-static-keyword-in-java.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; The Static Keyword in Java</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated
+        by <a href="https://github.com/greghendershott/frog">Frog</a>,
+        the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

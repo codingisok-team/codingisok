@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">coding is ok: Posts tagged 'testing'</title>
+ <link rel="self" href="http://codingisok.com/feeds/testing.atom.xml" />
+ <link href="http://codingisok.com/tags/testing.html" />
+ <id>urn:http-codingisok-com:-tags-testing-html</id>
+ <updated>2019-03-19T00:53:17Z</updated>
+ <entry>
+  <title type="text">Our Testing Philosophy</title>
+  <link rel="alternate" href="http://codingisok.com/2019/03/our-testing-philosophy.html?utm_source=testing&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2019-03-our-testing-philosophy-html</id>
+  <published>2019-03-19T00:53:17Z</published>
+  <updated>2019-03-19T00:53:17Z</updated>
+  <author>
+   <name>lan-party</name></author>
+  <content type="html">
+&lt;p&gt;To test or not to test, that is the question (jkjk don&amp;rsquo;t be a dumbus; TEST YOUR CODE). The real question is, when and how to test?&lt;/p&gt;
+
+&lt;p&gt;Spoiler alert: we&amp;rsquo;re not the biggest fans of test-driven development.&lt;/p&gt;&lt;a href="http://codingisok.com/2019/03/our-testing-philosophy.html?utm_source=testing&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
