@@ -91,9 +91,7 @@ def main():
 
 Example usage:
 
-```
-"""Example usage:
-
+```text
 $ python3 hot_dogge1.py
 Food? Fries
 Cost? 1.00
@@ -210,7 +208,7 @@ def main():
 
 Example usage:
 
-```
+```text
 $ python3 hot_dogge2.py
 Item? A
 Item? B
@@ -404,7 +402,7 @@ def main():
 
 Example usage:
 
-```
+```text
 $ python3 hot_dogge3.py ~/Desktop/no_younger_siblings_allowed/menu.txt
 Parsed menu:
   A: Fries      $1.00

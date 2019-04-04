@@ -131,7 +131,7 @@
 <p>You want to feel like you know what you&rsquo;re doing, so you figure you&rsquo;ll start with something simple: have the program take in the name of each item and its cost. Done!</p>
 
 <div class="brush: python">
- <table class="highlighttable">
+ <table class="highlight-sourcetable">
   <tbody>
    <tr>
     <td class="linenos">
@@ -181,7 +181,7 @@
 43
 44</pre></div></td>
     <td class="code">
-     <div class="highlight">
+     <div class="highlight-source">
       <pre><span></span><span class="k">def</span> <span class="nf">get_food_from_console</span><span class="p">():</span>  <span class="c1"># Returns a str</span>
   <span class="sd">"""</span>
 <span class="sd">  Returns (str, False) if the user entered a food, (None, True) otherwise.</span>
@@ -232,9 +232,45 @@
 
 <p>Example usage:</p>
 
-<pre><code>"""Example usage:
-
-$ python3 hot_dogge1.py
+<div class="brush: text">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span>$ python3 hot_dogge1.py
 Food? Fries
 Cost? 1.00
 
@@ -263,7 +299,10 @@ Food?
   Total:    $3.50
 
 Food? &lt;Ctrl-C&gt;
-$</code></pre>
+$
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>O.K., it may look like you just wrote most of this program, but because the design is so simple, this pseudocode happens to be mostly executable. If this was your finalized design, here would be the point where we would advocate to start writing tests.</p>
 
@@ -274,7 +313,7 @@ $</code></pre>
 <p>You realize that there are some flaws with your current approach — the menu isn&rsquo;t saved anywhere, there&rsquo;s a lot of typing involved, and it&rsquo;s easy to make a mistake when entering orders. You decide to go back to the drawing board.</p>
 
 <div class="brush: python">
- <table class="highlighttable">
+ <table class="highlight-sourcetable">
   <tbody>
    <tr>
     <td class="linenos">
@@ -350,7 +389,7 @@ $</code></pre>
 69
 70</pre></div></td>
     <td class="code">
-     <div class="highlight">
+     <div class="highlight-source">
       <pre><span></span><span class="k">class</span> <span class="nc">Food</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
   <span class="sd">"""A container to make it easy to group names and costs."""</span>
 
@@ -427,7 +466,33 @@ $</code></pre>
 
 <p>Example usage:</p>
 
-<pre><code>$ python3 hot_dogge2.py
+<div class="brush: text">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span>$ python3 hot_dogge2.py
 Item? A
 Item? B
 Item? remove B
@@ -444,7 +509,10 @@ Item?
   Total:    $3.50
 
 Item? &lt;Ctrl-C&gt;
-$</code></pre>
+$
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>On the bright side, this approach makes it much easier to create orders and fix mistakes. It&rsquo;s also impossible to mis-type a food name or cost, and mistakes don&rsquo;t show up in the final receipt.</p>
 
@@ -453,7 +521,7 @@ $</code></pre>
 <h3 id="option-3-fanciest-programming">Option 3: Fanciest Programming</h3>
 
 <div class="brush: python">
- <table class="highlighttable">
+ <table class="highlight-sourcetable">
   <tbody>
    <tr>
     <td class="linenos">
@@ -621,7 +689,7 @@ $</code></pre>
 161
 162</pre></div></td>
     <td class="code">
-     <div class="highlight">
+     <div class="highlight-source">
       <pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 
@@ -790,7 +858,84 @@ $</code></pre>
 
 <p>Example usage:</p>
 
-<pre><code>$ python3 hot_dogge3.py ~/Desktop/no_younger_siblings_allowed/menu.txt
+<div class="brush: text">
+ <table class="highlight-sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre></div></td>
+    <td class="code">
+     <div class="highlight-source">
+      <pre><span></span>$ python3 hot_dogge3.py ~/Desktop/no_younger_siblings_allowed/menu.txt
 Parsed menu:
   A: Fries      $1.00
   B: Hot Dog    $2.00
@@ -858,7 +1003,10 @@ Command? order end
 
 Order #2
 Command? &lt;Ctrl-C&gt;
-$</code></pre>
+$
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>Whoof, this one&rsquo;s a long one. Buuuuuuut now your sibling can&rsquo;t permanently mess up the menu, you can add special orders, and you can keep track of which items go together — heck yeah! Maybe all that thinking and restructuring was worth it after all!</p>
 
