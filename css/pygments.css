@@ -1,4 +1,8 @@
-pre { background: #272822; color: #f8f8f2 }
+div > pre { background: #272822; 
+  color: #f8f8f2;
+  padding: 15px;
+  margin: 0px;
+}
 .highlight-source .hll { background-color: #49483e }
 .highlight-source  { background: #272822; color: #f8f8f2 }
 .highlight-source .c { color: #75715e } /* Comment */
