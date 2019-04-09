@@ -6,15 +6,15 @@ If you program in Java, then you are most likely familiar with `public static vo
 
 <!-- more -->
 
-## In Java
+# In Java
 
 In Java, the `static` keyword allows the programmer to treat a method as if it's outside of its class. In other words, it allows you to call a class method using the class name instead of through an instance.
 
-## Case Study: programming a calculator
+# Case Study: programming a calculator
 
 Let's say you want to build your own, customized calculator. Yeah you could just use the one on your phone, but that would be too easy.
 
-### Creating a `static`-y calculator
+## Creating a `static`-y calculator
 
 Fun fact: for the most basic possible calculator, you won't ever need to create an instance of your class. Why? Because the calculator doesn't need to save anything, just perform operations and return results.
 
@@ -62,7 +62,7 @@ public class StaticCalculatorExample {
 
 Note that if you want to perform multiple operations in a row with this calculator, you would need to pass your previous result in to your next call as an argument.
 
-### Creating a calculator with less `static`
+## Creating a calculator with less `static`
 
 O.K., that other calculator was fine and dandy and simple and whatever, but what if you want to be able to perform operations on your last result? Here's where instances and non-`static` methods and come in.
 
@@ -146,7 +146,7 @@ Note that
 2. because the previous result is saved, none of the calculator methods can be static any more. After all, it wouldn't make sense for you to have a calculator, and for a friend to use static methods from your class to add two numbers together and thereby change the value of your `res` variable.
 
 
-## To sum up:
+# To sum up:
 
 In java, `static` is useful when nothing needs to be saved, nothing related to the class changes, and you don't need an instance of your class.
 

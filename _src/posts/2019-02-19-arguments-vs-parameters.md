@@ -8,15 +8,15 @@ Spoiler alert: parameters are used in reference to arguments.
 
 <!-- more -->
 
-## What's an argument?
+# What's an argument?
 An argument is any of the information (e.g. objects, values, pointers, etc.) passed to a function or method.[^1]
 
 [^1]: We wrote a post about the difference between functions and methods [here](https://codingisok.com/2019/02/functions-vs-methods.html)!
 
-## So what's a parameter then?
+# So what's a parameter then?
 A parameter is the reference to the arguments within a function or method. You can think of parameters as placeholder names for currently unknown values.
 
-## Case Study: Adding integers
+# Case Study: Adding integers
 
 Let's pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:[^2]
 
@@ -46,14 +46,14 @@ public class IntAdder {
 
 Note that you, a clever person, have used method overloading here to allow yourself to add together either two ints or a `List` of `Integers` (a.k.a. any number of integers).
 
-### The Parameters
+## The Parameters
 Since we don't have any method calls yet, let's start with the parameters for the two methods.
 
 The first method takes in two `int`s, adds them together, and returns the result. Here, `a` and `b` are our parameters, as they are the in-method names we have given our `int`s.
 
 The second method takes in a `List` (e.g. an `ArrayList`, a `LinkedList`, etc.) of `int`s, adds all the values together, and returns the result. For this method, we only have one parameter, our `List` `nums,` which we reference when getting the size of the `List` and each individual `int` within the `List`.
 
-### The Arguments
+## The Arguments
 
 O.K., time to actually use these methods! Quick — what's 12,345 + 67,890? ¯\\_(ツ)_/¯ Good thing you just wrote a method to figure it out! You make a call to `add()`, using the arguments `12345` and `67890`:
 
