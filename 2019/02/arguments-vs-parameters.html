@@ -108,15 +108,15 @@
 <p>Spoiler alert: parameters are used in reference to arguments.</p>
 <!-- more-->
 
-<h2 id="whats-an-argument">What&rsquo;s an argument?</h2>
+<h1 id="whats-an-argument">What&rsquo;s an argument?</h1>
 
 <p>An argument is any of the information (e.g. objects, values, pointers, etc.) passed to a function or method.<sup><a href="#2019-02-19-arguments-vs-parameters-footnote-1-definition" name="2019-02-19-arguments-vs-parameters-footnote-1-return">1</a></sup></p>
 
-<h2 id="so-whats-a-parameter-then">So what&rsquo;s a parameter then?</h2>
+<h1 id="so-whats-a-parameter-then">So what&rsquo;s a parameter then?</h1>
 
 <p>A parameter is the reference to the arguments within a function or method. You can think of parameters as placeholder names for currently unknown values.</p>
 
-<h2 id="case-study-adding-integers">Case Study: Adding integers</h2>
+<h1 id="case-study-adding-integers">Case Study: Adding integers</h1>
 
 <p>Let&rsquo;s pretend you want to add integers together. Lots of integers. For some reason, you decide you want a class to help you do that, so you write the following in java:<sup><a href="#2019-02-19-arguments-vs-parameters-footnote-2-definition" name="2019-02-19-arguments-vs-parameters-footnote-2-return">2</a></sup></p>
 
@@ -172,7 +172,7 @@
 
 <p>Note that you, a clever person, have used method overloading here to allow yourself to add together either two ints or a <code>List</code> of <code>Integers</code> (a.k.a. any number of integers).</p>
 
-<h3 id="the-parameters">The Parameters</h3>
+<h2 id="the-parameters">The Parameters</h2>
 
 <p>Since we don&rsquo;t have any method calls yet, let&rsquo;s start with the parameters for the two methods.</p>
 
@@ -180,7 +180,7 @@
 
 <p>The second method takes in a <code>List</code> (e.g. an <code>ArrayList</code>, a <code>LinkedList</code>, etc.) of <code>int</code>s, adds all the values together, and returns the result. For this method, we only have one parameter, our <code>List</code> <code>nums,</code> which we reference when getting the size of the <code>List</code> and each individual <code>int</code> within the <code>List</code>.</p>
 
-<h3 id="the-arguments">The Arguments</h3>
+<h2 id="the-arguments">The Arguments</h2>
 
 <p>O.K., time to actually use these methods! Quick — what&rsquo;s 12,345 + 67,890? ¯\_(ツ)_/¯ Good thing you just wrote a method to figure it out! You make a call to <code>add()</code>, using the arguments <code>12345</code> and <code>67890</code>:</p>
 

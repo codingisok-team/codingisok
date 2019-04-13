@@ -106,15 +106,15 @@
 <p>If you program in Java, then you are most likely familiar with <code>public static void main(String[] args)</code> (and if you&rsquo;re not, then are you sure you&rsquo;re programming in Java?), but what exactly does the <code>static</code> part mean?</p>
 <!-- more-->
 
-<h2 id="in-java">In Java</h2>
+<h1 id="in-java">In Java</h1>
 
 <p>In Java, the <code>static</code> keyword allows the programmer to treat a method as if it&rsquo;s outside of its class. In other words, it allows you to call a class method using the class name instead of through an instance.</p>
 
-<h2 id="case-study-programming-a-calculator">Case Study: programming a calculator</h2>
+<h1 id="case-study-programming-a-calculator">Case Study: programming a calculator</h1>
 
 <p>Let&rsquo;s say you want to build your own, customized calculator. Yeah you could just use the one on your phone, but that would be too easy.</p>
 
-<h3 id="creating-a-static-y-calculator">Creating a <code>static</code>-y calculator</h3>
+<h2 id="creating-a-static-y-calculator">Creating a <code>static</code>-y calculator</h2>
 
 <p>Fun fact: for the most basic possible calculator, you won&rsquo;t ever need to create an instance of your class. Why? Because the calculator doesn&rsquo;t need to save anything, just perform operations and return results.</p>
 
@@ -212,7 +212,7 @@
 
 <p>Note that if you want to perform multiple operations in a row with this calculator, you would need to pass your previous result in to your next call as an argument.</p>
 
-<h3 id="creating-a-calculator-with-less-static">Creating a calculator with less <code>static</code></h3>
+<h2 id="creating-a-calculator-with-less-static">Creating a calculator with less <code>static</code></h2>
 
 <p>O.K., that other calculator was fine and dandy and simple and whatever, but what if you want to be able to perform operations on your last result? Here&rsquo;s where instances and non-<code>static</code> methods and come in.</p>
 
@@ -380,7 +380,7 @@
  <li>
   <p>because the previous result is saved, none of the calculator methods can be static any more. After all, it wouldn&rsquo;t make sense for you to have a calculator, and for a friend to use static methods from your class to add two numbers together and thereby change the value of your <code>res</code> variable.</p></li></ol>
 
-<h2 id="to-sum-up">To sum up:</h2>
+<h1 id="to-sum-up">To sum up:</h1>
 
 <p>In java, <code>static</code> is useful when nothing needs to be saved, nothing related to the class changes, and you don&rsquo;t need an instance of your class.</p>
   <footer>

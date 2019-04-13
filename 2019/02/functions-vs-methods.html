@@ -108,19 +108,19 @@
 <p>Spoiler alert: Nope! There is actually a difference between the two.</p>
 <!-- more-->
 
-<h2 id="what-even-is-a-function">What even is a function?</h2>
+<h1 id="what-even-is-a-function">What even is a function?</h1>
 
 <p>A function in programming is a named collection of statements <sup><a href="#2019-02-12-functions-vs-methods-footnote-1-definition" name="2019-02-12-functions-vs-methods-footnote-1-return">1</a></sup> that, when performed in sequence, complete a defined task. Because functions are named, they can be called to perform the same task multiple times and so are good tools to use for making code shorter and easier to read.</p>
 
-<h2 id="ok-but-what-about-a-method">O.K., but what about a method?</h2>
+<h1 id="ok-but-what-about-a-method">O.K., but what about a method?</h1>
 
 <p>Easy: methods are simply functions that happen to belong to a class (i.e. methods are a subset of functions).</p>
 
-<h2 id="case-study-creating-a-grade-book">Case Study: Creating a grade book</h2>
+<h1 id="case-study-creating-a-grade-book">Case Study: Creating a grade book</h1>
 
 <p>Using an example is probably the easiest way to demonstrate the difference between functions and methods, so let&rsquo;s pretend you&rsquo;re a teacher. As all teachers do, you need a way to keep track of your students&rsquo; grades&hellip; A digital grade book sounds like it could be handy! Nothing too fancy, just something to keep track of individual students and their grade averages. Obviously we need a Student class, but where should the grade average be calculated?</p>
 
-<h3 id="the-functional-way">The &ldquo;Functional&rdquo; Way</h3>
+<h2 id="the-functional-way">The &ldquo;Functional&rdquo; Way</h2>
 
 <p>If we want to use a function, then the grade average must be calculated outside of the Student class. That means our <code>calculate_average</code> function is a simple average calculator (i.e. sum of student&rsquo;s grades divided by the total number of grades) and needs outsider access to the student&rsquo;s information.</p>
 
@@ -168,7 +168,7 @@
 
 <p>Note that the student instance itself doesn&rsquo;t know its own average, and that the average is calculated fresh with each call to the <code>calculate_average</code> function.</p>
 
-<h3 id="the-methodic-way">The &ldquo;Methodic&rdquo; Way</h3>
+<h2 id="the-methodic-way">The &ldquo;Methodic&rdquo; Way</h2>
 
 <p>If, on the other hand, we want to use a method, then the grade average must by definition be calculated inside of the Student class. In this case, the student instance itself will keep track of its own average, which is both more efficient and more secure.</p>
 
@@ -226,11 +226,11 @@
 
 <p>Because no other function or object needs outside access to any of the student&rsquo;s information, this information is ultimately more secure. Additionally, since the student object saves its own grade average, a simple optimization makes recalculating a new average upon the addition of a new grade faster, as no work needs to be re-done.</p>
 
-<h2 id="conclusion">Conclusion</h2>
+<h1 id="conclusion">Conclusion</h1>
 
 <p>As exemplified, functions and methods can be used to complete the same task, but in rather different ways. Though using a method was more optimal in our grade book example, methods are not always preferable to functions for every problem.</p>
 
-<h3 id="re-interpreting-function-and-method">Re-interpreting function and method</h3>
+<h2 id="re-interpreting-function-and-method">Re-interpreting function and method</h2>
 
 <p>Looking back at our example, we can now extend our previous definition to say that a function takes in <em>zero or more</em> inputs and produces exactly one output. A method, on the other hand, is a function that takes in <em>one or more</em> inputs where the first input is the instance of the class it belongs to. That&rsquo;s why methods in python always have the <code>self</code> argument first. In java, since only methods are used, the first argument is implied, but can be referenced with the <code>this</code> argument.</p>
 

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Values, References, and Pointers</title>
+    <meta name="description" content="TODO...">
+    <meta name="author"      content="lan-party">
+    <meta name="keywords"    content="terminology">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://codingisok.com/2019/04/values-references-and-pointers.html">
+    <link rel="next" href="/2019/03/our-testing-philosophy.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+
+      <a href="/index.html" class="navbar-brand">Coding is O.K.</a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar_collapse" aria-controls="navbar_collapse"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/general.html">general</a><a class="dropdown-item" href="/tags/java.html">java</a><a class="dropdown-item" href="/tags/keywords.html">keywords</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/testing.html">testing</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/FAQ.html">F.A.Q.</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/resources.html">Resources</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+      </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Values, References, and Pointers</h1>
+    <p class='date-and-tags'>
+<time datetime="2019-04-08" pubdate="true">2019-04-08</time> :: <span class="tags"><a href="/tags/terminology.html">terminology</a></span></p>
+    <p class='authors'>By: <span class="authors">lan-party</span></p>
+  </header>
+
+<p>TODO</p>
+<!-- more-->
+
+<h1 id="whats-a-value">What&rsquo;s a value?</h1>
+
+<p>A value is data that is created, passed around, and stored in a program.</p>
+
+<h1 id="how-about-a-reference">How about a reference?</h1>
+
+<p>A reference is an alias for a value stored somewhere else in the program. You can think of a reference as a short-hand way of accessing a value and passing it around or doing something with it.</p>
+
+<h2 id="mini-python-example-values-and-references-in-action">Mini Python Example: Values and References in Action</h2>
+
+<div class="brush: python">
+ <pre><code>s = "snek"</code></pre></div>
+
+<p>Here, <code>s</code> is a reference to the value <code>"snek"</code>. Since <code>s</code> is a reference, it can be re-assigned to another value; in that case, you would no longer have a way of referring to or even accessing <code>"snek"</code>. Different languages deal with reference-less values in different ways. Java and python will eventually &ldquo;garbage collect&rdquo; (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the value as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).</p>
+
+<h1 id="ok-but-what-about-a-pointer">O.K., but what about a pointer?</h1>
+
+<p>Pointers represent addresses to where values are stored in memory. Under the hood, they are simply a number. When a program starts, the operating system assigns it a block of unique and sequential memory addresses. A value is stored at one or more memory addresses, while a pointer represents a particular memory address.</p>
+
+<h2 id="mini-c-example-values-and-pointers-in-action">Mini c Example: Values and Pointers in Action</h2>
+
+<div class="brush: c">
+ <pre><code>int value = 5;
+int* pointer = &amp;value;</code></pre></div>
+
+<p>When started, the above code produces something like this in memory:</p>
+
+<pre><code>MEMORY  →  STORED
+ADDRESS    VALUE
+    	  ————————
+0x1230   |   5    | ← value
+     	  ————————
+0x1234   | 0x1230 | ← pointer
+      	  ————————</code></pre>
+
+<p>In this case, <code>5</code> is stored at memory address <code>0x1230</code> and can be accessed using the variable name <code>value</code>. <code>pointer</code> is equal to <code>0x1230</code> (a.k.a. <code>value</code>&rsquo;s memory address). Though irrelevant to this example, it is worth noting that <code>pointer</code> is stored at memory address <code>0x1234</code>.</p>
+
+<pre><code>EXPRESSION  →   VALUE
+ value      →   5
+&amp;value      →   0x1230
+ pointer    →   0x1230
+*pointer    →   5
+&amp;pointer    →   0x1234</code></pre>
+
+<h1 id="the-dictionary-a-metaphor">The Dictionary: A Metaphor</h1>
+
+<p>Metaphorically speaking, the dictionary is a good illustration of values, references, and pointers in action. When two people are conversing, they don&rsquo;t have to define every word they use; it is assumed that both people know what all the words mean, and these words act as references to their own definitions. However, if person A uses a word that person B doesn&rsquo;t know, then person B can use the word&rsquo;s spelling as a pointer to find its definition (i.e. its value) in the dictionary.</p>
+
+<blockquote>
+ <p>&ldquo;metaphor&rdquo; (reference)</p>
+ <blockquote>
+  <p>↓ spelling</p></blockquote>
+ <p>M-E-T-A-P-H-O-R (pointer)</p>
+ <blockquote>
+  <p>↓ definition</p></blockquote>
+ <p>the dictionary: &ldquo;a figure of speech in which a word or phrase literally denoting one kind of object or idea is used in place of another to suggest a likeness or analogy between them&rdquo;<sup><a href="#2019-04-08-values-references-and-pointers-footnote-1-definition" name="2019-04-08-values-references-and-pointers-footnote-1-return">1</a></sup> (value)</p></blockquote>
+
+<p>Alternately, person B can skip the pointer altogether, and ask the person A directly (i.e. dereference) for a definition.</p>
+
+<blockquote>
+ <p>&ldquo;metaphor&rdquo; (reference)</p>
+ <blockquote>
+  <p>↓ person B: &ldquo;what does that mean?&rdquo;</p></blockquote>
+ <p>person A: &ldquo;a figure of speech to allude to or explain another concept&rdquo; (value)</p></blockquote>
+
+<p>Note: this metaphor isn&rsquo;t perfect, as there can be multiple definitions for any given word, whereas in code there is a single value per reference.</p>
+
+<h1 id="case-study-screen-updater">Case Study: Screen Updater</h1>
+
+<p>You are getting swindled by your internet provider, and you&rsquo;re sick of not being able to smoothly stream videos. You&rsquo;ve had enough! Instead of verbally wrestling with the internet company again, you decide to take matters into your own hands and write a screen updater that will buffer the currently-streaming video and play it at a steady 24 frames per second (fps). You&rsquo;ve already finished most of the program; all you need to do now is create the screen updater that will load and then display the next frame of the video.</p>
+
+<div class="brush: c++">
+ <pre><code></code></pre></div>
+
+<h1 id="wrapup-language-breakdown">Wrapup: Language Breakdown</h1>
+
+<h2 id="in-c">In c++</h2>
+
+<h2 id="in-c">In c</h2>
+
+<h2 id="in-java">In Java</h2>
+
+<p>Java lets the programmer ignore the fact that pointers exist; therefore, the programmer interacts with values and references in the same way.</p>
+
+<div class="brush: java">
+ <pre><code>void something() {
+  A value = new A();
+  value.b = "butt";
+}
+
+void something(A reference) {
+  reference.b = "butt;
+}</code></pre></div>
+
+<h2 id="in-python">In Python</h2>
+
+<p>In Python, all names are references.</p>
+
+<div class="brush: python">
+ <pre><code></code></pre></div>
+
+<div class="footnotes">
+ <ol>
+  <li id="2019-04-08-values-references-and-pointers-footnote-1-definition" class="footnote-definition">
+   <p><a href="https://www.merriam-webster.com/dictionary/metaphor">As defined by Merriam-Webster</a>&nbsp;<a href="#2019-04-08-values-references-and-pointers-footnote-1-return">↩</a></p></li></ol></div>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://codingisok.com/2019/04/values-references-and-pointers.html"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://codingisok.com/2019/04/values-references-and-pointers.html"></g:plusone>
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2019/03/our-testing-philosophy.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Our Testing Philosophy</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated
+        by <a href="https://github.com/greghendershott/frog">Frog</a>,
+        the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
