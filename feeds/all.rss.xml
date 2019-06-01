@@ -4,9 +4,19 @@
   <title>coding is ok: coding is ok</title>
   <description>coding is ok: coding is ok</description>
   <link>http://codingisok.com/index.html</link>
-  <lastBuildDate>Tue, 19 Mar 2019 00:53:17 UT</lastBuildDate>
-  <pubDate>Tue, 19 Mar 2019 00:53:17 UT</pubDate>
+  <lastBuildDate>Tue, 09 Apr 2019 00:04:40 UT</lastBuildDate>
+  <pubDate>Tue, 09 Apr 2019 00:04:40 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>Values, Pointers, and References</title>
+   <link>http://codingisok.com/2019/04/values-pointers-and-references.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:http-codingisok-com:-2019-04-values-pointers-and-references-html</guid>
+   <pubDate>Tue, 09 Apr 2019 00:04:40 UT</pubDate>
+   <author>lan-party</author>
+   <description>
+&lt;p&gt;value != pointer != reference. But also sometimes value != pointer but pointer == reference. But HOW???&lt;/p&gt;
+
+&lt;p&gt;Programming makes my head hurt&amp;hellip;&lt;/p&gt;&lt;a href="http://codingisok.com/2019/04/values-pointers-and-references.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
   <item>
    <title>Our Testing Philosophy</title>
    <link>http://codingisok.com/2019/03/our-testing-philosophy.html?utm_source=all&amp;utm_medium=RSS</link>

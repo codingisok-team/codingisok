@@ -4,7 +4,19 @@
  <link rel="self" href="http://codingisok.com/feeds/terminology.atom.xml" />
  <link href="http://codingisok.com/tags/terminology.html" />
  <id>urn:http-codingisok-com:-tags-terminology-html</id>
- <updated>2019-03-05T18:21:49Z</updated>
+ <updated>2019-04-09T00:04:40Z</updated>
+ <entry>
+  <title type="text">Values, Pointers, and References</title>
+  <link rel="alternate" href="http://codingisok.com/2019/04/values-pointers-and-references.html?utm_source=terminology&amp;utm_medium=Atom" />
+  <id>urn:http-codingisok-com:-2019-04-values-pointers-and-references-html</id>
+  <published>2019-04-09T00:04:40Z</published>
+  <updated>2019-04-09T00:04:40Z</updated>
+  <author>
+   <name>lan-party</name></author>
+  <content type="html">
+&lt;p&gt;value != pointer != reference. But also sometimes value != pointer but pointer == reference. But HOW???&lt;/p&gt;
+
+&lt;p&gt;Programming makes my head hurt&amp;hellip;&lt;/p&gt;&lt;a href="http://codingisok.com/2019/04/values-pointers-and-references.html?utm_source=terminology&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
  <entry>
   <title type="text">The Static Keyword in Java</title>
   <link rel="alternate" href="http://codingisok.com/2019/03/the-static-keyword-in-java.html?utm_source=terminology&amp;utm_medium=Atom" />

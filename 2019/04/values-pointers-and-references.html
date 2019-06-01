@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Values, Pointers, and References</title>
+    <meta name="description" content="value != pointer != reference. But also sometimes value != pointer but pointer == reference. But HOW???  Programming makes my head hurt...">
+    <meta name="author"      content="lan-party">
+    <meta name="keywords"    content="terminology">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="http://codingisok.com/2019/04/values-pointers-and-references.html">
+    <link rel="next" href="/2019/03/our-testing-philosophy.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+
+      <a href="/index.html" class="navbar-brand">Coding is O.K.</a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar_collapse" aria-controls="navbar_collapse"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/general.html">general</a><a class="dropdown-item" href="/tags/java.html">java</a><a class="dropdown-item" href="/tags/keywords.html">keywords</a><a class="dropdown-item" href="/tags/terminology.html">terminology</a><a class="dropdown-item" href="/tags/testing.html">testing</a><a class="dropdown-item" href="/tags/trash.html">trash</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/FAQ.html">F.A.Q.</a>
+            </li> 
+            <li>
+              <a class="nav-link" href="/resources.html">Resources</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+      </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Values, Pointers, and References</h1>
+    <p class='date-and-tags'>
+<time datetime="2019-04-08" pubdate="true">2019-04-08</time> :: <span class="tags"><a href="/tags/terminology.html">terminology</a></span></p>
+    <p class='authors'>By: <span class="authors">lan-party</span></p>
+  </header>
+
+<p>value != pointer != reference. But also sometimes value != pointer but pointer == reference. But HOW???</p>
+
+<p>Programming makes my head hurt&hellip;</p>
+<!-- more-->
+
+<h1 id="whats-a-value">What&rsquo;s a value?</h1>
+
+<p>A value is data that is created, passed around, and stored in a program.</p>
+
+<h1 id="what-about-a-pointer">What about a pointer?</h1>
+
+<p>Pointers represent addresses to where values are stored in memory. Under the hood, they are simply a number. When a program starts, the operating system assigns it a block of unique and sequential memory addresses. A value is stored at one or more memory addresses, while a pointer represents a particular memory address.</p>
+
+<h2 id="mini-c-example-values-and-pointers-in-action">Mini c Example: Values and Pointers in Action</h2>
+
+<div class="brush: c">
+ <pre><code>int value = 5;
+int* pointer = &amp;value;</code></pre></div>
+
+<p>When started, the above code produces something like this in memory:</p>
+
+<pre><code>MEMORY  →  STORED
+ADDRESS    VALUE
+    	  ————————
+0x1000   |   5    | ← value
+     	  ————————
+0x4000   | 0x1000 | ← pointer
+      	  ————————</code></pre>
+
+<p>In this case, <code>5</code> is stored at memory address <code>0x1000</code> and can be accessed using the variable name <code>value</code>. <code>pointer</code> is equal to <code>0x1000</code> (a.k.a. <code>value</code>&rsquo;s memory address). Though irrelevant to this example, it is worth noting that <code>pointer</code> is stored at memory address <code>0x4000</code>.</p>
+
+<pre><code>EXPRESSION  →   VALUE
+ value      →   5
+&amp;value      →   0x1000
+ pointer    →   0x1000
+*pointer    →   5
+&amp;pointer    →   0x4000</code></pre>
+
+<h1 id="ok-how-about-a-reference">O.K., how about a reference?</h1>
+
+<p>References are a purely language-level concept – behind the scenes they are transformed into a combination of values and pointers. In other words, they&rsquo;re an abstraction which are <em>supposed</em> to make programming easier, but often end up making it more confusing if you think too much about them (see: us while writing this post).</p>
+
+<p>Concretely, a reference is an alias for a value stored somewhere else in the program. You can think of a reference as a short-hand way of accessing a value, to pass it around or do something with it.</p>
+
+<h2 id="mini-python-example-values-and-references-in-action">Mini Python Example: Values and References in Action</h2>
+
+<div class="brush: python">
+ <pre><code>class Snake(object):
+  def __init__(self, name):
+    self._name = name
+
+s = Snake("albert")</code></pre></div>
+
+<p>Here, <code>s</code> is a reference to a <em>specific</em> instance of the <code>Snake</code> class (his name is albert). Note that in python, references can be modified to refer to other values (not true for all languages, like racket or Rust). However, if you did something like <code>s = Snake("NOT albert")</code>, you would no longer have a way of referring to or even accessing the original albert. You could try making him again, but the new <code>Snake</code> wouldn&rsquo;t be him. It would be a doppelgänger. A false twin. Our dear albert would be lost to the aether.</p>
+
+<p>Different languages deal with reference-less values in different ways. Java and python will eventually &ldquo;garbage collect&rdquo; (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the value as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).</p>
+
+<h1 id="language-breakdown">Language Breakdown</h1>
+
+<h2 id="in-c">In <code>c++</code></h2>
+
+<p><code>c++</code> provides explicit syntax for each of these three concepts, but does so in a nuanced and subtle way. References and pointers both refer to values which live <em>somewhere</em> in memory. Essentially, references are pointers that can&rsquo;t be <code>nullptr</code>. They were added to <code>c++</code> after it was initially created, and are usually preferred over pointers (pointers still exist in <code>c++</code> because they were inherited from <code>c</code>. Remember: <code>c++</code> is "<code>c</code> with classes").</p>
+
+<div class="brush: c++">
+ <pre><code>struct IntContainer {
+  int data;
+};
+
+void example() {
+  IntContainer value;
+  value.data = 10; // Use '.' to access things in values
+
+  IntContainer* pointer = &amp;value;
+  pointer-&gt;data = 15; // Use '-&gt;' to dereference pointers
+  assert(*pointer == value); // Dereference a pointer itself with '*'
+
+  IntContainer&amp; reference = value; // 'reference' is an alias of 'value'
+  reference.data = 30; // Use '.' to access things in references
+  assert(reference == value);
+}</code></pre></div>
+
+<h2 id="in-c">In <code>c</code></h2>
+
+<p><code>c</code> supports values and pointers and that&rsquo;s it. It&rsquo;s old and clunky but it lets you do whatever you want. Even if that means dereferencing null pointers&hellip; or overwriting your entire operating system. Fun fact: when <code>c</code> tries to dereference a null pointer, the <em>operating system</em> stops it with a &ldquo;SEGFAULT&rdquo;. Because <code>c</code> knows no limits. Live your best life, <code>c</code>.</p>
+
+<div class="brush: c">
+ <pre><code>// c isn't advanced enough to do `struct &lt;name&gt; { &lt;stuff&gt; };
+// instead we have to do `typedef &lt;entire struct definition&gt; &lt;name&gt;`;
+typedef struct {
+  int data;
+} IntContainer;
+
+
+void example() {
+  IntContainer value;
+  value.data = 10; // Use '.' to access things in values
+
+  IntContainer* pointer = &amp;value;
+  pointer-&gt;data = 15; // Use '-&gt;' to dereference pointers
+  assert(*pointer == value); // Dereference a pointer itself with '*'
+}</code></pre></div>
+
+<h2 id="in-java">In <code>java</code></h2>
+
+<p><code>Java</code> supports values and references. Here&rsquo;s the catch: the values are stored on the heap, so you only interact with them via <code>new</code> (to create them) and references (to use them). There are pointers too, but they&rsquo;re buried deep under the surface and essentially let the programmer ignore the fact that they exist. The practical upshot is that interacting with values in <code>java</code> mostly boils down to using references. There is one catch: primitive values, like <code>int</code> and <code>float</code>, aren&rsquo;t stored on the heap. So when we name them (<code>int i = 0;</code>), <code>i</code> is a value, not a reference.</p>
+
+<div class="brush: java">
+ <pre><code>// In "IntContainer.java"
+public class IntContainer {
+  public int data;
+}
+
+...
+
+// In "Example.java"
+public class Example{
+  void example() {
+    // Primitives are the only values we interact with directly 
+    int value = 10;
+
+    // Refer to an IntContainer value
+    IntContainer reference = new IntContainer(); // `new` tells Java to create a value on the heap
+    reference.data = 10; // Use '.' to access things in values
+
+    IntContainer otherReference = reference;
+    otherReference.data = 15; 
+
+    // Since reference and otherReference refer to the same IntContainer value,
+    // changing one is the same as changing the other.
+    assert(reference.data == otherReference.data);
+  }
+}</code></pre></div>
+
+<h2 id="in-python">In <code>python</code></h2>
+
+<p>Python, like java, supports values and references. However, memory in Python is pretty confusing. That&rsquo;s because python is an interpreted language, so the <code>python</code> program is reading through your code and doing stuff with its own memory accordingly, including creating objects in its own memory space. So let&rsquo;s forget about that for now and focus on the language itself. When writing code in python, everything is an object (AKA a value), and the names of objects are references to the value. Python doesn&rsquo;t even have primitive values like java – e.g. <code>int</code>, <code>float</code>, etc. like <code>1</code> and <code>3.141</code> are objects too!</p>
+
+<div class="brush: python">
+ <pre><code>class IntContainer(object):
+  def __init__(self, data):
+    self._data = data
+
+def example():
+  # No primitives! Everything is a reference to an object!
+  not_a_value_actually_a_reference = 10
+
+  # Refer to an IntContainer value
+  reference = IntContainer(10)  # python doesn't need `new`
+
+  other_reference = reference
+  other_reference.data = 15
+
+  # As with java, reference and other_reference refer to the same object,
+  # changing one is the same as changing the other.
+  assert(reference.data == other_reference.data)</code></pre></div>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://codingisok.com/2019/04/values-pointers-and-references.html"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://codingisok.com/2019/04/values-pointers-and-references.html"></g:plusone>
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2019/03/our-testing-philosophy.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Our Testing Philosophy</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated
+        by <a href="https://github.com/greghendershott/frog">Frog</a>,
+        the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

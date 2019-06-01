@@ -125,46 +125,22 @@
 <p>If we want to use a function, then the grade average must be calculated outside of the Student class. That means our <code>calculate_average</code> function is a simple average calculator (i.e. sum of student&rsquo;s grades divided by the total number of grades) and needs outsider access to the student&rsquo;s information.</p>
 
 <div class="brush: java">
- <table class="highlight-sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td>
-    <td class="code">
-     <div class="highlight-source">
-      <pre><span></span><span class="kd">class</span> <span class="nf">FunctionalStudent</span><span class="o">(</span><span class="n">object</span><span class="o">):</span>
+ <pre><code>class FunctionalStudent(object):
 
-  <span class="n">def</span> <span class="nf">__init__</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">name</span><span class="o">):</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_grades</span> <span class="o">=</span> <span class="o">[]</span>
+  def __init__(self, name):
+    self._name = name
+    self._grades = []
 
-  <span class="n">def</span> <span class="nf">get_grades</span><span class="o">(</span><span class="n">self</span><span class="o">):</span>
-    <span class="k">return</span> <span class="n">self</span><span class="o">.</span><span class="na">_grades</span>
+  def get_grades(self):
+    return self._grades
 
-  <span class="n">def</span> <span class="nf">add_grade</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">new_grade</span><span class="o">):</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_grades</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">new_grade</span><span class="o">)</span>
+  def add_grade(self, new_grade):
+    self._grades.append(new_grade)
 
-<span class="n">def</span> <span class="nf">calculate_average</span><span class="o">(</span><span class="n">student</span><span class="o">):</span>
-  <span class="n">grades</span> <span class="o">=</span> <span class="n">student</span><span class="o">.</span><span class="na">get_grades</span><span class="o">()</span>
-  <span class="k">return</span> <span class="n">sum</span><span class="o">(</span><span class="n">grades</span><span class="o">)</span> <span class="o">/</span> <span class="n">len</span><span class="o">(</span><span class="n">grades</span><span class="o">)</span>
-</pre></div>
-</td></tr></tbody></table>
-</div>
+def calculate_average(student):
+  grades = student.get_grades()
+  return sum(grades) / len(grades)
+</code></pre></div>
 
 <p>Note that the student instance itself doesn&rsquo;t know its own average, and that the average is calculated fresh with each call to the <code>calculate_average</code> function.</p>
 
@@ -173,56 +149,26 @@
 <p>If, on the other hand, we want to use a method, then the grade average must by definition be calculated inside of the Student class. In this case, the student instance itself will keep track of its own average, which is both more efficient and more secure.</p>
 
 <div class="brush: java">
- <table class="highlight-sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td>
-    <td class="code">
-     <div class="highlight-source">
-      <pre><span></span><span class="kd">class</span> <span class="nf">MethodicStudent</span><span class="o">(</span><span class="n">object</span><span class="o">):</span>
+ <pre><code>class MethodicStudent(object):
 
-  <span class="n">def</span> <span class="nf">__init__</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">name</span><span class="o">):</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_grades</span> <span class="o">=</span> <span class="o">[]</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_average</span> <span class="o">=</span> <span class="mf">0.0</span>
+  def __init__(self, name):
+    self._name = name
+    self._grades = []
+    self._average = 0.0
 
-  <span class="n">def</span> <span class="nf">get_average</span><span class="o">(</span><span class="n">self</span><span class="o">):</span>
-    <span class="k">return</span> <span class="n">self</span><span class="o">.</span><span class="na">_average</span>
+  def get_average(self):
+    return self._average
 
-  <span class="n">def</span> <span class="nf">get_grades</span><span class="o">(</span><span class="n">self</span><span class="o">):</span>
-    <span class="k">return</span> <span class="n">self</span><span class="o">.</span><span class="na">_grades</span>
+  def get_grades(self):
+    return self._grades
 
-  <span class="n">def</span> <span class="nf">add_grade</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">new_grade</span><span class="o">):</span>
-    <span class="n">recalculated_average</span> <span class="o">=</span> <span class="n">recalculate_average</span><span class="o">(</span><span class="n">new_grade</span><span class="o">)</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_grades</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">new_grade</span><span class="o">)</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_average</span> <span class="o">=</span> <span class="n">recalculated_average</span>
+  def add_grade(self, new_grade):
+    recalculated_average = recalculate_average(new_grade)
+    self._grades.append(new_grade)
+    self._average = recalculated_average
 
-  <span class="n">def</span> <span class="nf">recalculate_average</span><span class="o">(</span><span class="n">self</span><span class="o">,</span> <span class="n">new_grade</span><span class="o">):</span>
-    <span class="k">return</span> <span class="o">(</span><span class="n">self</span><span class="o">.</span><span class="na">_average</span> <span class="o">+</span> <span class="n">new_grade</span><span class="o">/</span><span class="n">len</span><span class="o">(</span><span class="n">self</span><span class="o">.</span><span class="na">_grades</span><span class="o">))</span> <span class="o">*</span> <span class="n">len</span><span class="o">(</span><span class="n">self</span><span class="o">.</span><span class="na">_grades</span><span class="o">)/(</span><span class="n">len</span><span class="o">(</span><span class="n">self</span><span class="o">.</span><span class="na">_grades</span><span class="o">)+</span><span class="mi">1</span><span class="o">)</span>
-</pre></div>
-</td></tr></tbody></table>
-</div>
+  def recalculate_average(self, new_grade):
+    return (self._average + new_grade/len(self._grades)) * len(self._grades)/(len(self._grades)+1)</code></pre></div>
 
 <p>Because no other function or object needs outside access to any of the student&rsquo;s information, this information is ultimately more secure. Additionally, since the student object saves its own grade average, a simple optimization makes recalculating a new average upon the addition of a new grade faster, as no work needs to be re-done.</p>
 
