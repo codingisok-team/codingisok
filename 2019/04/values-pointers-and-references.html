@@ -158,7 +158,7 @@ s = Snake("albert")</code></pre></div>
 
 <p>Here, <code>s</code> is a reference to a <em>specific</em> instance of the <code>Snake</code> class (his name is albert). Note that in python, references can be modified to refer to other values (not true for all languages, like racket or Rust). However, if you did something like <code>s = Snake("NOT albert")</code>, you would no longer have a way of referring to or even accessing the original albert. You could try making him again, but the new <code>Snake</code> wouldn&rsquo;t be him. It would be a doppelgänger. A false twin. Our dear albert would be lost to the aether.</p>
 
-<p>Different languages deal with reference-less values in different ways. Java and python will eventually &ldquo;garbage collect&rdquo; (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the value as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).</p>
+<p>Different languages deal with reference-less values in different ways. Java and python will eventually &ldquo;garbage collect&rdquo; (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the memory as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).</p>
 
 <h1 id="language-breakdown">Language Breakdown</h1>
 
@@ -238,7 +238,7 @@ public class Example{
 
 <h2 id="in-python">In <code>python</code></h2>
 
-<p>Python, like java, supports values and references. However, memory in Python is pretty confusing. That&rsquo;s because python is an interpreted language, so the <code>python</code> program is reading through your code and doing stuff with its own memory accordingly, including creating objects in its own memory space. So let&rsquo;s forget about that for now and focus on the language itself. When writing code in python, everything is an object (AKA a value), and the names of objects are references to the value. Python doesn&rsquo;t even have primitive values like java – e.g. <code>int</code>, <code>float</code>, etc. like <code>1</code> and <code>3.141</code> are objects too!</p>
+<p>Python, like java, supports values and references. However, memory in Python is pretty confusing. That&rsquo;s because python is an interpreted language, so the <code>python</code> program is reading through your code and doing stuff with its own memory accordingly, including creating objects in its own memory space. So let&rsquo;s forget about that for now and focus on the language itself. When writing code in python, everything is an object (AKA a value), and the names of objects are references to the value. Python doesn&rsquo;t even have primitive values like java – <code>int</code>s and <code>float</code>s (such as <code>1</code> and <code>3.141</code>) are objects too!</p>
 
 <div class="brush: python">
  <pre><code>class IntContainer(object):
@@ -247,7 +247,7 @@ public class Example{
 
 def example():
   # No primitives! Everything is a reference to an object!
-  not_a_value_actually_a_reference = 10
+  actually_a_reference_not_a_primitive = 10
 
   # Refer to an IntContainer value
   reference = IntContainer(10)  # python doesn't need `new`
