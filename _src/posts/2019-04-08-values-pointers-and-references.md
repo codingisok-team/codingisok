@@ -55,7 +55,7 @@ s = Snake("albert")
 ```
 Here, `s` is a reference to a _specific_ instance of the `Snake` class (his name is albert). Note that in python, references can be modified to refer to other values (not true for all languages, like racket or Rust). However, if you did something like `s = Snake("NOT albert")`, you would no longer have a way of referring to or even accessing the original albert. You could try making him again, but the new `Snake` wouldn't be him. It would be a doppelgänger. A false twin. Our dear albert would be lost to the aether.
 
-Different languages deal with reference-less values in different ways. Java and python will eventually "garbage collect" (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the value as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).
+Different languages deal with reference-less values in different ways. Java and python will eventually "garbage collect" (overwrite) the memory storing the disused value; c and c++ on the other hand, will leave the memory as-is, causing mayhem and distress for uninitiated plebes (a.k.a. us ♪~ ᕕ(ᐛ)ᕗ).
 
 # Language Breakdown
 
@@ -134,7 +134,7 @@ public class Example{
 ```
 
 ## In `python`
-Python, like java, supports values and references. However, memory in Python is pretty confusing. That's because python is an interpreted language, so the `python` program is reading through your code and doing stuff with its own memory accordingly, including creating objects in its own memory space. So let's forget about that for now and focus on the language itself. When writing code in python, everything is an object (AKA a value), and the names of objects are references to the value. Python doesn't even have primitive values like java – e.g. `int`, `float`, etc. like `1` and `3.141` are objects too!
+Python, like java, supports values and references. However, memory in Python is pretty confusing. That's because python is an interpreted language, so the `python` program is reading through your code and doing stuff with its own memory accordingly, including creating objects in its own memory space. So let's forget about that for now and focus on the language itself. When writing code in python, everything is an object (AKA a value), and the names of objects are references to the value. Python doesn't even have primitive values like java – `int`s and `float`s (such as `1` and `3.141`) are objects too!
 
 ```python
 class IntContainer(object):
@@ -143,7 +143,7 @@ class IntContainer(object):
 
 def example():
   # No primitives! Everything is a reference to an object!
-  not_a_value_actually_a_reference = 10
+  actually_a_reference_not_a_primitive = 10
 
   # Refer to an IntContainer value
   reference = IntContainer(10)  # python doesn't need `new`

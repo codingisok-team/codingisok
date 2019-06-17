@@ -143,7 +143,7 @@ Note that
 
 1. this calculator class has twice as many methods (i.e. two methods per arithmetical option) so as to allow the user to perform either operations on the last result or entirely new operations, and
 
-2. because the previous result is saved, none of the calculator methods can be static any more. After all, it wouldn't make sense for you to have a calculator, and for a friend to use static methods from your class to add two numbers together and thereby change the value of your `res` variable.
+2. because the previous result is saved, none of the calculator methods can be `static` any more. After all, it wouldn't make sense for you to have a calculator, and for a friend to use static methods from your class to add two numbers together and thereby change the value of your `res` variable.
 
 
 # To sum up:

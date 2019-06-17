@@ -445,11 +445,11 @@ Command? D
   item id = 4
     Mayonnaise:     $0.50
 
-Command? order remove 5
+Command? order remove 4
   removed item 4:
     Mayonnaise:     $0.50
 
-Command? order 1 add "special friend discount" -$1.00
+Command? order add "special friend discount" -$1.00
   item id = 5
     special friend discount: -$1.00
 
